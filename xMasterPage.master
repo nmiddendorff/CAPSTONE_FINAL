@@ -1,0 +1,91 @@
+﻿<%@ Master Language="VB" CodeFile="xMasterPage.master.vb" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="icon" href="./photos/images.png"/>
+
+    <title>South Liberty Library</title>
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+     <link href="navbar-fixed-top.css" rel="stylesheet" />
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <style type="text/css">
+         .footer {
+             text-align: center;
+         }
+     </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+ <div id="container">
+
+<!--NAV BAR - NELSON MIDDENDORFF -->            
+              <!-- Fixed navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+           <!--<a class="navbar-brand" href="#">South Liberty Public Library</a>-->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+         <li><asp:Image ID="Image1" runat="server" Height="50px" ImageUrl="~/photos/whitelogo2.png" /></li>
+         <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>  
+         <li><asp:HyperLink ID="materials" runat="server" NavigateUrl="~/materials.aspx">Materials</asp:HyperLink></li>  
+	     <li><asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink></li>   
+         <li><asp:HyperLink ID="About" runat="server" NavigateUrl="~/About.aspx">About Us</asp:HyperLink></li>   
+         <li><asp:HyperLink ID="Project" runat="server" NavigateUrl="~/Project.aspx">Project</asp:HyperLink></li>
+        <li><asp:HyperLink ID="Search" runat="server" NavigateUrl="~/Search.aspx">Search</asp:HyperLink></li>
+               </ul>
+
+
+          <ul class="nav navbar-nav navbar-right">
+          <li><asp:LoginStatus ID="LoginStatus1" runat="server" /> </li>
+          <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin.aspx">Admin</asp:HyperLink></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ </div>
+
+ <!--NAV BAR - NELSON MIDDENDORFF -->
+        body { padding-top: 70px; }
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+<!--FOOTER - NELSON MIDDENDORFF -->
+         <div class="footer">
+             <br />
+             <br />
+        <p class="text-muted">&copy; 2014 MSCI:3300 - Software Design and Development 
+                Today's date is: <asp:Label ID="Label2" runat="server" ><%= String.Format("{0:d}", DateTime.Now) %></asp:Label></p>
+      </div>
+<!--FOOTER - NELSON MIDDENDORFF -->
+
+    </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
