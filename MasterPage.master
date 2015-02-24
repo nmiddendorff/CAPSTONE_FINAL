@@ -49,7 +49,7 @@
          <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>  
 	     <li><asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink></li>   
          <li><asp:HyperLink ID="About" runat="server" NavigateUrl="~/About.aspx">About Us</asp:HyperLink></li>   
-         <li><asp:HyperLink ID="Project" runat="server" NavigateUrl="~/Project.aspx">Project</asp:HyperLink></li>
+        
                </ul>
 
 
