@@ -9,11 +9,9 @@
     <br />
  <h1>About Us</h1>
     <div class="well">
-        <p>Auto Upgrade has quality used and pre-owned Cars, Trucks, and SUVs that 
-            will fit your budget. Located in North Liberty at 1100 Main Street, 
-            our experts have many awards of quality customer service and 
-            respectful buying experience. Call (712) Auto-Ups or stop by</p>
-</div>
+        <p>WELCOME TO OUR ABOUT US PAGE!!! WE R CAPSTONE</p>
+</div>
+
 
 </asp:Content>
 
