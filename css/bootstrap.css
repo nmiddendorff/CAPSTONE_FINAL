@@ -1278,6 +1278,7 @@ h6,
 }
 p {
   margin: 0 0 10px;
+    text-align: center;
 }
 .lead {
   margin-bottom: 20px;
@@ -2230,6 +2231,7 @@ pre code {
 }
 table {
   background-color: transparent;
+    text-align: left;
 }
 caption {
   padding-top: 8px;
