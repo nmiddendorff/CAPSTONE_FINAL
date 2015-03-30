@@ -24,7 +24,7 @@ Partial Class Account_AddRole
 
 
         Dim queryString As String = "SELECT RoleName FROM dbo.aspnet_Roles"
-        Dim connectionString As String = ConfigurationManager.ConnectionStrings("cars_nmiddendorff").ConnectionString
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("db_studentrecords").ConnectionString
 
         Dim da As SqlDataAdapter = New SqlDataAdapter(queryString, connectionString)
         Dim ds As New DataSet
@@ -51,7 +51,7 @@ Partial Class Account_AddRole
     Public Sub BindUsers()
 
         Dim queryString As String = "SELECT UserName FROM dbo.aspnet_Users"
-        Dim connectionString As String = ConfigurationManager.ConnectionStrings("cars_nmiddendorff").ConnectionString
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("db_studentrecords").ConnectionString
 
         Dim da As SqlDataAdapter = New SqlDataAdapter(queryString, connectionString)
         Dim ds As New DataSet
@@ -138,7 +138,7 @@ Partial Class Account_AddRole
         Dim selectedUser As String = list_allUsers.SelectedItem.Text
         Dim sqlStmt As String = queryString & "'" & selectedUser & "'"
 
-        Dim connectionString As String = ConfigurationManager.ConnectionStrings("cars_nmiddendorff").ConnectionString
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("db_studentrecords").ConnectionString
 
         Dim da As SqlDataAdapter = New SqlDataAdapter(sqlStmt, connectionString)
         Dim ds As New DataSet
@@ -179,7 +179,7 @@ Partial Class Account_AddRole
         Dim selectedRole As String = list_allRoles.SelectedItem.Text
         Dim sqlStmt As String = queryString & "'" & selectedRole & "'"
 
-        Dim connectionString As String = ConfigurationManager.ConnectionStrings("cars_nmiddendorff").ConnectionString
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("db_studentrecords").ConnectionString
 
         Dim da As SqlDataAdapter = New SqlDataAdapter(sqlStmt, connectionString)
         Dim ds As New DataSet

@@ -3,7 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1></h1>
+
+
+    <div class="container">
+    <div class="row">
+      <div class="span4"></div>
+      <div class="span4"><img src=".\images\iowa.png" alt="Mountain View" style="width:254px; height:140px; "/></div>
+      <div class="span4"></div>
+    </div>
+
+</div>
     <h2 class="text-center">Student Contact Management System</h2>
 
     <div class="jumbotron">
