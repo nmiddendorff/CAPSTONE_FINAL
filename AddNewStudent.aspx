@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ViewAll.aspx.vb" Inherits="AddNew" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="AddNewStudent.aspx.vb" Inherits="AddNew" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -42,30 +42,8 @@
             <asp:Parameter Name="GID" Type="Int32" />
             <asp:Parameter Name="SID" Type="Int32" />
         </UpdateParameters>
-    </asp:SqlDataSource>
-    <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
-            <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
-            <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
-            <asp:BoundField DataField="phone" HeaderText="phone" SortExpression="phone" />
-            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-            <asp:BoundField DataField="major" HeaderText="major" SortExpression="major" />
-            <asp:BoundField DataField="address1" HeaderText="address1" SortExpression="address1" />
-            <asp:BoundField DataField="address2" HeaderText="address2" SortExpression="address2" />
-            <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-            <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" />
-            <asp:BoundField DataField="EID" HeaderText="EID" SortExpression="EID" />
-            <asp:BoundField DataField="salary" HeaderText="salary" SortExpression="salary" />
-            <asp:BoundField DataField="job_title" HeaderText="job_title" SortExpression="job_title" />
-            <asp:BoundField DataField="job_location" HeaderText="job_location" SortExpression="job_location" />
-            <asp:BoundField DataField="GID" HeaderText="GID" SortExpression="GID" />
-        </Columns>
-    </asp:GridView>
-    <br />
-    <asp:FormView ID="FormView1" runat="server" DataKeyNames="SID" DataSourceID="SqlDataSource1">
+</asp:SqlDataSource>
+    <asp:FormView ID="FormView1" runat="server" DataKeyNames="SID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
             SID:
             <asp:Label ID="SIDLabel1" runat="server" Text='<%# Eval("SID") %>' />
@@ -211,8 +189,6 @@
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
-    </asp:FormView>
-    <br />
-&nbsp;
+</asp:FormView>
 </asp:Content>
 
