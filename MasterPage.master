@@ -48,11 +48,10 @@
           
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-         
-         <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/ViewAllStudent.aspx">View All Students</asp:HyperLink></li>  
-	     <li><asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink></li>   
-         <li><asp:HyperLink ID="About" runat="server" NavigateUrl="~/About.aspx">About Us</asp:HyperLink></li>   
-        
+         <li><asp:HyperLink ID="home" runat="server" NavigateUrl="~/admin/homepage.aspx">Home</asp:HyperLink></li>
+         <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/admin/ViewAllStudent.aspx">View All Students</asp:HyperLink></li>  
+         <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/ViewAllEmployee.aspx">View All Employees</asp:HyperLink></li>  
+         <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/admin/ViewAllGraduation.aspx">View All Graduations</asp:HyperLink></li>  
                </ul>
 
 

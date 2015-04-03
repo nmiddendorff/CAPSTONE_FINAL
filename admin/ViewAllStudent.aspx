@@ -64,9 +64,9 @@
             <asp:BoundField DataField="GID" HeaderText="GID" SortExpression="GID" />
         </Columns>
     </asp:GridView>
+<br />
     <br />
-    <br />
-    <br />
-    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AddNewStudent.aspx">Add New</asp:HyperLink>
+
+    <a class="btn btn-primary btn-lg" href="AddNewStudent.aspx" role="button">Add New</a>
 </asp:Content>
 
