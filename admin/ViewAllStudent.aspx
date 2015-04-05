@@ -47,21 +47,21 @@
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
-            <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
-            <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
-            <asp:BoundField DataField="phone" HeaderText="phone" SortExpression="phone" />
-            <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-            <asp:BoundField DataField="major" HeaderText="major" SortExpression="major" />
-            <asp:BoundField DataField="address1" HeaderText="address1" SortExpression="address1" />
-            <asp:BoundField DataField="address2" HeaderText="address2" SortExpression="address2" />
-            <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-            <asp:BoundField DataField="state" HeaderText="state" SortExpression="state" />
-            <asp:BoundField DataField="EID" HeaderText="EID" SortExpression="EID" />
-            <asp:BoundField DataField="salary" HeaderText="salary" SortExpression="salary" />
-            <asp:BoundField DataField="job_title" HeaderText="job_title" SortExpression="job_title" />
-            <asp:BoundField DataField="job_location" HeaderText="job_location" SortExpression="job_location" />
-            <asp:BoundField DataField="GID" HeaderText="GID" SortExpression="GID" />
+            <asp:BoundField DataField="SID" HeaderText="Student ID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
+            <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name" />
+            <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
+            <asp:BoundField DataField="phone" HeaderText="Phone Number" SortExpression="phone" />
+            <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+            <asp:BoundField DataField="major" HeaderText="Major" SortExpression="major" />
+            <asp:BoundField DataField="address1" HeaderText="Address 1" SortExpression="address1" />
+            <asp:BoundField DataField="address2" HeaderText="Address 2" SortExpression="address2" />
+            <asp:BoundField DataField="city" HeaderText="City" SortExpression="city" />
+            <asp:BoundField DataField="state" HeaderText="State" SortExpression="state" />
+            <asp:BoundField DataField="EID" HeaderText="Employee ID" SortExpression="EID" />
+            <asp:BoundField DataField="salary" HeaderText="Salary" SortExpression="salary" />
+            <asp:BoundField DataField="job_title" HeaderText="Job Title" SortExpression="job_title" />
+            <asp:BoundField DataField="job_location" HeaderText="Job Location" SortExpression="job_location" />
+            <asp:BoundField DataField="GID" HeaderText="Graduation ID" SortExpression="GID" />
         </Columns>
     </asp:GridView>
 <br />

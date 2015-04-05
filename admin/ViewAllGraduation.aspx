@@ -21,12 +21,12 @@
             <asp:Parameter Name="GID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1">
         <Columns>
-            <asp:BoundField DataField="GID" HeaderText="GID" ReadOnly="True" SortExpression="GID" />
-            <asp:BoundField DataField="SHORT_DESCR" HeaderText="SHORT_DESCR" SortExpression="SHORT_DESCR" />
-            <asp:BoundField DataField="LONG_DESCR" HeaderText="LONG_DESCR" SortExpression="LONG_DESCR" />
-            <asp:BoundField DataField="ACADEMIC_YEAR_RANGE" HeaderText="ACADEMIC_YEAR_RANGE" SortExpression="ACADEMIC_YEAR_RANGE" />
+            <asp:BoundField DataField="GID" HeaderText="Graduation ID" ReadOnly="True" SortExpression="GID" />
+            <asp:BoundField DataField="SHORT_DESCR" HeaderText="Short Description" SortExpression="SHORT_DESCR" />
+            <asp:BoundField DataField="LONG_DESCR" HeaderText="Long Description" SortExpression="LONG_DESCR" />
+            <asp:BoundField DataField="ACADEMIC_YEAR_RANGE" HeaderText="Academic Year Range" SortExpression="ACADEMIC_YEAR_RANGE" />
         </Columns>
     </asp:GridView>
 
