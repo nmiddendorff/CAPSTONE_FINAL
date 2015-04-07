@@ -136,7 +136,7 @@
             GID:
             <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
             <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </InsertItemTemplate>
         <ItemTemplate>
@@ -190,5 +190,7 @@
             &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
 </asp:FormView>
+
+    <asp:Label ID="lbl_newstudent" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
 </asp:Content>
 

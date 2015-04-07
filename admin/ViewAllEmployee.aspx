@@ -26,12 +26,17 @@
     <asp:GridView ID="GridView_employee" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource1">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:BoundField DataField="EID" HeaderText="Employee ID" InsertVisible="False" ReadOnly="True" SortExpression="EID" />
-            <asp:BoundField DataField="emp_name" HeaderText="Employee Name" SortExpression="emp_name" />
-            <asp:BoundField DataField="emp_hq" HeaderText="Employee HQ" SortExpression="emp_hq" />
-            <asp:BoundField DataField="emp_phone" HeaderText="Employee Phone Number" SortExpression="emp_phone" />
+            <asp:BoundField DataField="EID" HeaderText="Employer ID" InsertVisible="False" ReadOnly="True" SortExpression="EID" />
+            <asp:BoundField DataField="emp_name" HeaderText="Employer Name" SortExpression="emp_name" />
+            <asp:BoundField DataField="emp_hq" HeaderText="Employer HQ" SortExpression="emp_hq" />
+            <asp:BoundField DataField="emp_phone" HeaderText="Employer Phone Number" SortExpression="emp_phone" />
         </Columns>
     </asp:GridView>
+
+    <br />
+    <asp:Label ID="lbl_deletedEmployee" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:Label>
+
+    &nbsp;
 
     <br />
     <br />

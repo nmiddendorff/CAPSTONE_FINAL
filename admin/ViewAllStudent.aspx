@@ -65,8 +65,11 @@
         </Columns>
     </asp:GridView>
 <br />
+    <asp:Label ID="lbl_deletedStudent" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
+    <br />
     <br />
 
     <a class="btn btn-primary btn-lg" href="AddNewStudent.aspx" role="button">Add New</a>
+
 </asp:Content>
 
