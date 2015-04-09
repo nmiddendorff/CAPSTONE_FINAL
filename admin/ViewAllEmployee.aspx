@@ -23,7 +23,7 @@
     </asp:SqlDataSource>
 
 
-    <asp:GridView ID="GridView_employee" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView_employee" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource1" AllowSorting="True">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="EID" HeaderText="Employer ID" InsertVisible="False" ReadOnly="True" SortExpression="EID" />

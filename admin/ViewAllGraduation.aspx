@@ -21,7 +21,7 @@
             <asp:Parameter Name="GID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1" AllowSorting="True">
         <Columns>
             <asp:BoundField DataField="GID" HeaderText="Graduation ID" ReadOnly="True" SortExpression="GID" />
             <asp:BoundField DataField="SHORT_DESCR" HeaderText="Short Description" SortExpression="SHORT_DESCR" />
