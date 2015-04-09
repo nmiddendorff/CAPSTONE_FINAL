@@ -43,14 +43,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-           <!--<a class="navbar-brand" href="#">South Liberty Public Library</a>-->
+           <!--<a class="navbar-brand" href="#">d</a>-->
         </div>
           
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
          <li><asp:HyperLink ID="home" runat="server" NavigateUrl="~/admin/homepage.aspx">Home</asp:HyperLink></li>
          <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/admin/ViewAllStudent.aspx">View All Students</asp:HyperLink></li>  
-         <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/ViewAllEmployers.aspx">View All Employers</asp:HyperLink></li>  
+         <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/ViewAllEmployee.aspx">View All Employers</asp:HyperLink></li>  
          <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/admin/ViewAllGraduation.aspx">View All Graduations</asp:HyperLink></li>  
                </ul>
 

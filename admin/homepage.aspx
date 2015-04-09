@@ -11,7 +11,7 @@
 
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
   <div class="btn-group" role="group">
-    <a class="btn btn-primary btn-lg" href="ViewAllEmployee.aspx" role="button">View All Employees</a>
+    <a class="btn btn-primary btn-lg" href="ViewAllEmployee.aspx" role="button">View All Employers</a>
   </div>
   <div class="btn-group" role="group">
     <a class="btn btn-primary btn-lg" href="ViewAllStudent.aspx" role="button">View All Students</a>
