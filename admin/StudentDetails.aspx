@@ -4,11 +4,50 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID WHERE ([SID] = @SID)
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" DeleteCommand="DELETE FROM [final_student] WHERE [SID] = @SID" InsertCommand="INSERT INTO [final_student] ([last_name], [first_name], [phone], [email], [major], [address1], [address2], [city], [state], [EID], [salary], [job_title], [job_location], [GID]) VALUES (@last_name, @first_name, @phone, @email, @major, @address1, @address2, @city, @state, @EID, @salary, @job_title, @job_location, @GID)" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID 
+FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID 
+WHERE ([SID] = @SID)" UpdateCommand="UPDATE [final_student] 
+SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email, [major] = @major, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [EID] = @EID, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location, [GID] = @GID WHERE [SID] = @SID
 ">
+        <DeleteParameters>
+            <asp:QueryStringParameter Name="SID" QueryStringField="SID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="last_name" Type="String" />
+            <asp:Parameter Name="first_name" Type="String" />
+            <asp:Parameter Name="phone" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <asp:Parameter Name="major" Type="String" />
+            <asp:Parameter Name="address1" Type="String" />
+            <asp:Parameter Name="address2" Type="String" />
+            <asp:Parameter Name="city" Type="String" />
+            <asp:Parameter Name="state" Type="String" />
+            <asp:Parameter Name="EID" Type="Int32" />
+            <asp:Parameter Name="salary" Type="Int32" />
+            <asp:Parameter Name="job_title" Type="String" />
+            <asp:Parameter Name="job_location" Type="String" />
+            <asp:Parameter Name="GID" Type="Int32" />
+        </InsertParameters>
         <SelectParameters>
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" Type="Int32" />
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="last_name" Type="String" />
+            <asp:Parameter Name="first_name" Type="String" />
+            <asp:Parameter Name="phone" Type="String" />
+            <asp:Parameter Name="email" Type="String" />
+            <asp:Parameter Name="major" Type="String" />
+            <asp:Parameter Name="address1" Type="String" />
+            <asp:Parameter Name="address2" Type="String" />
+            <asp:Parameter Name="city" Type="String" />
+            <asp:Parameter Name="state" Type="String" />
+            <asp:Parameter Name="EID" Type="Int32" />
+            <asp:Parameter Name="salary" Type="Int32" />
+            <asp:Parameter Name="job_title" Type="String" />
+            <asp:Parameter Name="job_location" Type="String" />
+            <asp:Parameter Name="GID" Type="Int32" />
+            <asp:QueryStringParameter Name="SID" QueryStringField="SID" />
+        </UpdateParameters>
     </asp:SqlDataSource>
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
@@ -180,7 +219,11 @@
             GID:
             <asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' />
             <br />
+            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
+            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
         </ItemTemplate>
+
     </asp:FormView>
 
 </asp:Content>
