@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" DeleteCommand="DELETE FROM [final_student] WHERE [SID] = @SID" InsertCommand="INSERT INTO [final_student] ([last_name], [first_name], [phone], [email], [major], [address1], [address2], [city], [state], [EID], [salary], [job_title], [job_location], [GID]) VALUES (@last_name, @first_name, @phone, @email, @major, @address1, @address2, @city, @state, @EID, @salary, @job_title, @job_location, @GID)" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID 
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" DeleteCommand="DELETE FROM [final_student] WHERE [SID] = @SID" InsertCommand="INSERT INTO [final_student] ([last_name], [first_name], [phone], [email], [major], [address1], [address2], [city], [state], [EID], [salary], [job_title], [job_location], [GID]) VALUES (@last_name, @first_name, @phone, @email, @major, @address1, @address2, @city, @state, @EID, @salary, @job_title, @job_location, @GID)" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID, final_student.comments, final_student.last_contact 
 FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID 
 WHERE ([SID] = @SID)" UpdateCommand="UPDATE [final_student] 
 SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email, [major] = @major, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [EID] = @EID, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location, [GID] = @GID WHERE [SID] = @SID
@@ -105,6 +105,12 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             GID:
             <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
             <br />
+            comments:
+            <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
+            <br />
+            last_contact:
+            <asp:TextBox ID="last_contactTextBox" runat="server" Text='<%# Bind("last_contact") %>' />
+            <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
@@ -160,6 +166,12 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             GID:
             <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
             <br />
+            comments:
+            <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
+            <br />
+            last_contact:
+            <asp:TextBox ID="last_contactTextBox" runat="server" Text='<%# Bind("last_contact") %>' />
+            <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </InsertItemTemplate>
@@ -187,7 +199,6 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <br />
             email:
             <asp:Label ID="emailLabel" runat="server" Text='<%# Bind("email") %>' />
-            <asp:HyperLink ID="linkEmail" runat="server" Text='<%# Eval("email") %>' Visible="False"></asp:HyperLink>
             <br />
             major:
             <asp:Label ID="majorLabel" runat="server" Text='<%# Bind("major") %>' />
@@ -219,6 +230,12 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <br />
             GID:
             <asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' />
+            <br />
+            comments:
+            <asp:Label ID="commentsLabel" runat="server" Text='<%# Bind("comments") %>' />
+            <br />
+            last_contact:
+            <asp:Label ID="last_contactLabel" runat="server" Text='<%# Bind("last_contact") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
