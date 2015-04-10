@@ -22,6 +22,18 @@
             <asp:Parameter Name="GID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <h1>Add Graduation</h1>
+    <h2>Instructions</h2>
+   <h4> <b>Graduation ID:</b> Year + 1(Summer), 3(Fall), 5(Winter), 8(Spring)</h4>
+   <h5>[E.g. 20141, 20148] </h5>
+    <h4><b>Short Description:</b> Term + Year</h4>
+    <h5>[E.g. Summer 2014, Spring 2015]</h5>
+    <h4><b>Long Description:</b> Add fiscal year</h4> 
+    <h5>[E.g. Summer 2014-15, Spring 2014-15]</h5>
+    <h4><b>Academic Year Range:</b> Full Fiscal Year</h4>
+    <h5>[E.g. 2014-2015]</h5>
+    <br />
+
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="GID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
             GID:
@@ -40,16 +52,16 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            GID:
+            Gradutation ID:
             <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
             <br />
-            SHORT_DESCR:
+            Short Description:
             <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
             <br />
-            LONG_DESCR:
+            Long Description:
             <asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
             <br />
-            ACADEMIC_YEAR_RANGE:
+            Academic Year Range:
             <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
