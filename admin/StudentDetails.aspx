@@ -187,6 +187,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <br />
             email:
             <asp:Label ID="emailLabel" runat="server" Text='<%# Bind("email") %>' />
+            <asp:HyperLink ID="linkEmail" runat="server" Text='<%# Eval("email") %>' Visible="False"></asp:HyperLink>
             <br />
             major:
             <asp:Label ID="majorLabel" runat="server" Text='<%# Bind("major") %>' />
@@ -225,6 +226,9 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
         </ItemTemplate>
 
     </asp:FormView>
+
+    <br />
+    <asp:Button ID="btnEmail" runat="server" Text="Email" />
 
 </asp:Content>
 
