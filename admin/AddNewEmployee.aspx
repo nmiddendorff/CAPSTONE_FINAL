@@ -23,32 +23,30 @@
 
 
     <br />
+    <h3> Add New Employeer</h3>
+
+
+    <br />
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" DefaultMode="Insert" DataKeyNames="EID">
         <EditItemTemplate>
             EID:
             <asp:Label ID="EIDLabel1" runat="server" Text='<%# Eval("EID") %>' />
             <br />
-            emp_name:
+            Company Name:
             <asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' />
             <br />
-            emp_hq:
+            Company City &amp; State:
             <asp:TextBox ID="emp_hqTextBox" runat="server" Text='<%# Bind("emp_hq") %>' />
-            <br />
-            emp_phone:
-            <asp:TextBox ID="emp_phoneTextBox" runat="server" Text='<%# Bind("emp_phone") %>' />
             <br />
             <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            emp_name:
+            Company Name:
             <asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' />
             <br />
-            emp_hq:
+            HQ City &amp; State:
             <asp:TextBox ID="emp_hqTextBox" runat="server" Text='<%# Bind("emp_hq") %>' />
-            <br />
-            emp_phone:
-            <asp:TextBox ID="emp_phoneTextBox" runat="server" Text='<%# Bind("emp_phone") %>' />
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
@@ -57,14 +55,11 @@
             EID:
             <asp:Label ID="EIDLabel" runat="server" Text='<%# Eval("EID") %>' />
             <br />
-            emp_name:
+            Company Name:
             <asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name") %>' />
             <br />
-            emp_hq:
+            HQ City &amp; State:
             <asp:Label ID="emp_hqLabel" runat="server" Text='<%# Bind("emp_hq") %>' />
-            <br />
-            emp_phone:
-            <asp:Label ID="emp_phoneLabel" runat="server" Text='<%# Bind("emp_phone") %>' />
             <br />
             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
             &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
