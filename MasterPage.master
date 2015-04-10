@@ -79,6 +79,12 @@
  
                                 
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    <p>
+                        <br />
+                    </p>
+                    <p>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [dbo.final_graduation].*, final_student.*, final_employee.* FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID"></asp:SqlDataSource>
+                    </p>
                 </asp:ContentPlaceHolder>
 
             </div> <!-- close the main DIV -->
