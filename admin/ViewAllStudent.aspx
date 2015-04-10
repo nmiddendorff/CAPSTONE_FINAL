@@ -46,7 +46,7 @@ Where FS.EID = FE.EID; " UpdateCommand="UPDATE [final_student] SET [last_name] =
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-This SQL DataSouce has final_student INNER JOINED with final_employee<br />
+    This SQL DataSouce has final_student INNER JOINED with final_employee<br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID,EID1" DataSourceID="SqlDataSource1" AllowSorting="True" Width="765px">
         <Columns>
             <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
