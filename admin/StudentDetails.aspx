@@ -4,13 +4,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_student] WHERE ([SID] = @SID)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID WHERE ([SID] = @SID)
+">
         <SelectParameters>
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" Type="Int32" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:FormView ID="FormView1" runat="server" DataKeyNames="SID" DataSourceID="SqlDataSource1">
+    <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
+            emp_name:
+            <asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' />
+            <br />
+            Expr1:
+            <asp:TextBox ID="Expr1TextBox" runat="server" Text='<%# Bind("Expr1") %>' />
+            <br />
+            SHORT_DESCR:
+            <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
+            <br />
             SID:
             <asp:Label ID="SIDLabel1" runat="server" Text='<%# Eval("SID") %>' />
             <br />
@@ -60,6 +70,15 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
+            emp_name:
+            <asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' />
+            <br />
+            Expr1:
+            <asp:TextBox ID="Expr1TextBox" runat="server" Text='<%# Bind("Expr1") %>' />
+            <br />
+            SHORT_DESCR:
+            <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
+            <br />
             last_name:
             <asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' />
             <br />
@@ -106,6 +125,15 @@
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </InsertItemTemplate>
         <ItemTemplate>
+            emp_name:
+            <asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name") %>' />
+            <br />
+            Expr1:
+            <asp:Label ID="Expr1Label" runat="server" Text='<%# Bind("Expr1") %>' />
+            <br />
+            SHORT_DESCR:
+            <asp:Label ID="SHORT_DESCRLabel" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
+            <br />
             SID:
             <asp:Label ID="SIDLabel" runat="server" Text='<%# Eval("SID") %>' />
             <br />
@@ -142,6 +170,7 @@
             salary:
             <asp:Label ID="salaryLabel" runat="server" Text='<%# Bind("salary") %>' />
             <br />
+
             job_title:
             <asp:Label ID="job_titleLabel" runat="server" Text='<%# Bind("job_title") %>' />
             <br />
@@ -151,7 +180,6 @@
             GID:
             <asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' />
             <br />
-
         </ItemTemplate>
     </asp:FormView>
 
