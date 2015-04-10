@@ -91,7 +91,9 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
             <br />
             EID:
-            <asp:TextBox ID="EIDTextBox" runat="server" Text='<%# Bind("EID") %>' />
+            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID")%>'>
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
             <br />
             salary:
             <asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' />
@@ -103,7 +105,9 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' />
             <br />
             GID:
-            <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID") %>'>
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [LONG_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
             <br />
             comments:
             <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
@@ -228,7 +232,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             job_location:
             <asp:Label ID="job_locationLabel" runat="server" Text='<%# Bind("job_location") %>' />
             <br />
-            GID:
+            Grad Date:
             <asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' />
             <br />
             comments:

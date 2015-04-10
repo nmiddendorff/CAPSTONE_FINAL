@@ -76,7 +76,9 @@
             <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
             <br />
             EID:
-            <asp:TextBox ID="EIDTextBox" runat="server" Text='<%# Bind("EID") %>' />
+            <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource8" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID")%>'>
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
             <br />
             salary:
             <asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' />
@@ -88,9 +90,9 @@
             <asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' />
             <br />
             GID:
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource4" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID")%>'>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource7" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID") %>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [LONG_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [LONG_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
             <br />
             comments:
             <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
