@@ -56,7 +56,7 @@ Where FS.EID = FE.EID; " UpdateCommand="UPDATE [final_student] SET [last_name] =
             <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
             <asp:BoundField DataField="GID" HeaderText="GID" SortExpression="GID" />
             <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
-            <asp:HyperLinkField Text="SELECT" />
+            <asp:HyperLinkField DataNavigateUrlFields="SID" DataNavigateUrlFormatString="StudentDetails.aspx?SID={0}" Text="SELECT" />
         </Columns>
     </asp:GridView>
 <br />
