@@ -55,4 +55,16 @@ Partial Class admin_EmailPage
         
 
     End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim gid As String
+
+        gid = DropDownList1.SelectedValue
+
+        GridView1.Visible = True
+        Button1.Visible = True
+
+
+
+    End Sub
 End Class

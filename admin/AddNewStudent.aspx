@@ -154,7 +154,7 @@
             <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
             <br />
             last_contact:
-            <asp:Calendar ID="Calendar1" runat="server" SelectedDate='<%# Bind("last_contact")%>'></asp:Calendar>
+            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("last_contact")%>'></asp:TextBox>
             <br />
             <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
