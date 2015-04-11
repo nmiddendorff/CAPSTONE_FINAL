@@ -37,32 +37,37 @@
         <div class="col-lg-12">
     <asp:FormView ID="FormView2" runat="server" DataKeyNames="GID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <InsertItemTemplate>
-            <formview class="form-control dl-horizontal">
-                <div class="form-group">
-                    <label for="GIDTextBox" class="col-sm2 control-label">Graduation ID: </label>
-                    <input type="text" class="form-control" id="GID" placeholder="GID" />
-                    <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
-                </div>
-                <div class="form-group">
-                    <label for="SHORT_DESCRTextBox" class="col-sm2 control-label">Short Description: </label>
-                    <input type="text" class="form-control" id="GID" placeholder="GID" />
-                      <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
-                </div>
-                <div class="form-group">
-                    <label for="LONG_DESCRTextBox" class="col-sm2 control-label">Long Description: </label>
-                    <input type="text" class="form-control" id="GID" placeholder="GID" />
-                      <asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
-                </div>
-                <div class="form-group">
-                    <label for="ACADEMIC_YEAR_RANGETextBox" class="col-sm2 control-label">Academic Year Range: </label>
-                    <input type="text" class="form-control" id="GID" placeholder="GID" />
-                      <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
-                </div>
-                <div class="form-group">
-                    <asp:Button ID="ButtonInsert" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                    <asp:Button ID="ButtonCancel" runat="server" CausesValidation="True" CommandName="Insert" Text="Cacnel" />
-                </div>
-            </formview>
+
+            <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Add Graduation</div> 
+  
+  
+  <table class="table">
+             <tr>
+    <th class="tg-031e">Graduation ID: </th>
+    <th class="tg-031e"><asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' /></th>
+  </tr>
+            <tr>
+    <th class="tg-031e">Short Description:</th>
+    <th class="tg-031e"><asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' /></th>
+  </tr>
+            <tr>
+    <th class="tg-031e">Long Description:</th>
+    <th class="tg-031e"><asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' /></th>
+  </tr>
+            <tr>
+    <th class="tg-031e">Academic Year Range:</th>
+    <th class="tg-031e"><asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' /></th>
+  </tr>
+  <tr>
+    <th class="tg-031e"> <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </th>
+    <th class="tg-031e"> </th>
+  </tr>
+    </table>
+    </div>
         </InsertItemTemplate>
     </asp:FormView>
             </div>

@@ -23,12 +23,15 @@
     </asp:SqlDataSource>
     <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1" AllowSorting="True">
         <Columns>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="GID" HeaderText="Graduation ID" ReadOnly="True" SortExpression="GID" />
             <asp:BoundField DataField="SHORT_DESCR" HeaderText="Short Description" SortExpression="SHORT_DESCR" />
             <asp:BoundField DataField="LONG_DESCR" HeaderText="Long Description" SortExpression="LONG_DESCR" />
             <asp:BoundField DataField="ACADEMIC_YEAR_RANGE" HeaderText="Academic Year Range" SortExpression="ACADEMIC_YEAR_RANGE" />
         </Columns>
     </asp:GridView>
+
+    <asp:Label ID="lbl_deletedGraduation" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Red"></asp:Label>
 
     <br />
     <br />
