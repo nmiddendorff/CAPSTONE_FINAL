@@ -37,7 +37,6 @@
         <div class="col-lg-12">
     <asp:FormView ID="FormView2" runat="server" DataKeyNames="GID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <InsertItemTemplate>
-
             <formview class="form-control dl-horizontal">
                 <div class="form-group">
                     <label for="GIDTextBox" class="col-sm2 control-label">Graduation ID: </label>
@@ -59,11 +58,11 @@
                     <input type="text" class="form-control" id="GID" placeholder="GID" />
                       <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
                 </div>
+                <div class="form-group">
+                    <asp:Button ID="ButtonInsert" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                    <asp:Button ID="ButtonCancel" runat="server" CausesValidation="True" CommandName="Insert" Text="Cacnel" />
+                </div>
             </formview>
-
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-
         </InsertItemTemplate>
     </asp:FormView>
             </div>
