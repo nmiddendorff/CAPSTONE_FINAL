@@ -47,18 +47,24 @@
              <tr>
     <th class="tg-031e">Graduation ID: </th>
     <th class="tg-031e"><asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' /></th>
+    <th class="tg=031e"><asp:RequiredFieldValidator ID="validate_GID" runat="server" ErrorMessage="Please enter a GID!" ControlToValidate="GIDTextBox" ForeColor="#FF3300"></asp:RequiredFieldValidator></th>
   </tr>
             <tr>
     <th class="tg-031e">Short Description:</th>
     <th class="tg-031e"><asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' /></th>
+    <th class="tg=031e"><asp:RequiredFieldValidator ID="validate_short" runat="server" ErrorMessage="Please enter a Short Date!" ControlToValidate="SHORT_DESCRTextBox" ForeColor="#FF3300"></asp:RequiredFieldValidator></th>
   </tr>
             <tr>
     <th class="tg-031e">Long Description:</th>
     <th class="tg-031e"><asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' /></th>
+    <th class="tg-031e">
+        <asp:RequiredFieldValidator ID="validate_long" runat="server" ErrorMessage="Please enter a Long Date!" ControlToValidate="LONG_DESCRTextBox" ForeColor="#FF3300"></asp:RequiredFieldValidator></th>
   </tr>
             <tr>
     <th class="tg-031e">Academic Year Range:</th>
     <th class="tg-031e"><asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' /></th>
+    <th class="tg-031e">
+        <asp:RequiredFieldValidator ID="validate_range" runat="server" ErrorMessage="Please enter a year range!" ControlToValidate="ACADEMIC_YEAR_RANGETextBox" ForeColor="#FF3300"></asp:RequiredFieldValidator></th>
   </tr>
   <tr>
     <th class="tg-031e"> <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
