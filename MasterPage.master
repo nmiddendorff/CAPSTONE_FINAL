@@ -52,13 +52,15 @@
          <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/admin/ViewAllStudent.aspx">View All Students</asp:HyperLink></li>  
          <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/ViewAllEmployee.aspx">View All Employers</asp:HyperLink></li>  
          <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/admin/ViewAllGraduation.aspx">View All Graduations</asp:HyperLink></li>  
-               </ul>
+          <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/SEARCH.aspx">Search</asp:HyperLink></li>  
+          <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/admin/Statistics.aspx">Statistics</asp:HyperLink></li>  
+                    
+          </ul>
 
 
           <ul class="nav navbar-nav navbar-right">
           <li><asp:LoginStatus ID="LoginStatus1" runat="server" /> </li>
-              <li><div class="form-group"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></div></li>
-              <li><button type="submit" class="btn btn-default">Submit</button></li>
+              
 
 
           </ul>

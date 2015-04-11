@@ -10,21 +10,15 @@ Partial Class admin_StudentDetails
         Dim rngBody As String
         Dim rngAttach As String
         Dim email As Label = FormView1.FindControl("emailLabel")
-        Dim sid As Label = FormView1.FindControl("SIDLabel")
-        Dim name As Label = FormView1.FindControl("first_nameLabel")
-        Dim txtname As String
-        Dim txtsid As String
 
-        txtname = name.Text
-        txtsid = sid.Text
 
         objOutlook = CreateObject("Outlook.Application")
         objMail = objOutlook.CreateItem(0)
 
 
         rngTo = email.Text
-        rngSubject = "Mike Colbert needs your help!"
-        rngBody = "Hi " & txtname & ", Please click this link http://localhost:61949/StudentPage.aspx?SID=" & txtsid
+        rngSubject = "Test"
+        rngBody = "This is a test"
         'rngAttach = .Range("B4")
 
 
