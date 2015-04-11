@@ -33,58 +33,43 @@
     <h4><b>Academic Year Range:</b> Full Fiscal Year</h4>
     <h5>[E.g. 2014-2015]</h5>
     <br />
-
-    <asp:FormView ID="FormView1" runat="server" DataKeyNames="GID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
-        <EditItemTemplate>
-            GID:
-            <asp:Label ID="GIDLabel1" runat="server" Text='<%# Eval("GID") %>' />
-            <br />
-            SHORT_DESCR:
-            <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
-            <br />
-            LONG_DESCR:
-            <asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
-            <br />
-            ACADEMIC_YEAR_RANGE:
-            <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </EditItemTemplate>
+    <div class="row">
+        <div class="col-lg-12">
+    <asp:FormView ID="FormView2" runat="server" DataKeyNames="GID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <InsertItemTemplate>
-            Gradutation ID:
-            <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
-            <br />
-            Short Description:
-            <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
-            <br />
-            Long Description:
-            <asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
-            <br />
-            Academic Year Range:
-            <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
+
+            <formview class="form-control dl-horizontal">
+                <div class="form-group">
+                    <label for="GIDTextBox" class="col-sm2 control-label">Graduation ID: </label>
+                    <input type="text" class="form-control" id="GID" placeholder="GID" />
+                    <asp:TextBox ID="GIDTextBox" runat="server" Text='<%# Bind("GID") %>' />
+                </div>
+                <div class="form-group">
+                    <label for="SHORT_DESCRTextBox" class="col-sm2 control-label">Short Description: </label>
+                    <input type="text" class="form-control" id="GID" placeholder="GID" />
+                      <asp:TextBox ID="SHORT_DESCRTextBox" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
+                </div>
+                <div class="form-group">
+                    <label for="LONG_DESCRTextBox" class="col-sm2 control-label">Long Description: </label>
+                    <input type="text" class="form-control" id="GID" placeholder="GID" />
+                      <asp:TextBox ID="LONG_DESCRTextBox" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
+                </div>
+                <div class="form-group">
+                    <label for="ACADEMIC_YEAR_RANGETextBox" class="col-sm2 control-label">Academic Year Range: </label>
+                    <input type="text" class="form-control" id="GID" placeholder="GID" />
+                      <asp:TextBox ID="ACADEMIC_YEAR_RANGETextBox" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
+                </div>
+            </formview>
+
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+
         </InsertItemTemplate>
-        <ItemTemplate>
-            GID:
-            <asp:Label ID="GIDLabel" runat="server" Text='<%# Eval("GID") %>' />
-            <br />
-            SHORT_DESCR:
-            <asp:Label ID="SHORT_DESCRLabel" runat="server" Text='<%# Bind("SHORT_DESCR") %>' />
-            <br />
-            LONG_DESCR:
-            <asp:Label ID="LONG_DESCRLabel" runat="server" Text='<%# Bind("LONG_DESCR") %>' />
-            <br />
-            ACADEMIC_YEAR_RANGE:
-            <asp:Label ID="ACADEMIC_YEAR_RANGELabel" runat="server" Text='<%# Bind("ACADEMIC_YEAR_RANGE") %>' />
-            <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-        </ItemTemplate>
     </asp:FormView>
+            </div>
+        </div>
+    <br />
+    <br />
 
     <asp:Label ID="lbl_newgraduation" runat="server" Font-Bold="True" Font-Size="X-Small" ForeColor="#FF3300"></asp:Label>
 
