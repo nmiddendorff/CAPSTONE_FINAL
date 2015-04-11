@@ -42,15 +42,29 @@
             &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            Company Name:
-            <asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' />
-            <br />
-            HQ City &amp; State:
-            <asp:TextBox ID="emp_hqTextBox" runat="server" Text='<%# Bind("emp_hq") %>' />
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div> 
+  
+  
+  <table class="table">
+    <tr>
+    <th class="tg-031e">Company Name</th>
+    <th class="tg-031e"><asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' /></th>
+  </tr>
+      <tr>
+    <th class="tg-031e">HQ City:</th>
+    <th class="tg-031e"><asp:TextBox ID="emp_hqTextBox" runat="server" Text='<%# Bind("emp_hq") %>' /></th>
+  </tr>
+  <tr>
+    <th class="tg-031e"> <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />
             &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </InsertItemTemplate>
+        </th>
+    <th class="tg-031e"> </th>
+  </tr>
+</table>
+</div>
+           </InsertItemTemplate>
         <ItemTemplate>
             EID:
             <asp:Label ID="EIDLabel" runat="server" Text='<%# Eval("EID") %>' />

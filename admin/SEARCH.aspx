@@ -8,7 +8,7 @@
 
 
 
-
+    Search one item at a time:
 <table class="tg">
   <tr>
     <th class="tg-031e">   <p class="text-left">Search First Name:</p> 
