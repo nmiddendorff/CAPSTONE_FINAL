@@ -23,7 +23,7 @@
 
 
     <br />
-    <h3> Add New Employeer</h3>
+    <h3> Add New Employer</h3>
 
 
     <br />
@@ -51,10 +51,14 @@
     <tr>
     <th class="tg-031e">Company Name</th>
     <th class="tg-031e"><asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' /></th>
-  </tr>
+    <th class="tg-031e">
+        <asp:RequiredFieldValidator ID="validate_company" runat="server" ErrorMessage="Please enter a Company Name!" ForeColor="#FF3300" ControlToValidate="emp_nameTextBox"></asp:RequiredFieldValidator></th>
+      </tr>
       <tr>
     <th class="tg-031e">HQ City:</th>
     <th class="tg-031e"><asp:TextBox ID="emp_hqTextBox" runat="server" Text='<%# Bind("emp_hq") %>' /></th>
+    <th class="tg-031e">
+        <asp:RequiredFieldValidator ID="validate_city" runat="server" ErrorMessage="Please enter a city!" ForeColor="#FF3300" ControlToValidate="emp_hqTextBox"></asp:RequiredFieldValidator></th>
   </tr>
   <tr>
     <th class="tg-031e"> <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Add" />

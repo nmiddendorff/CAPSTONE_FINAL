@@ -2231,8 +2231,8 @@ pre code {
 }
 table {
   background-color: transparent;
-    text-align: center;
-}
+    text-align: left;
+    }
 caption {
   padding-top: 8px;
   padding-bottom: 8px;
