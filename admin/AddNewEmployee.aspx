@@ -23,7 +23,7 @@
 
 
     <br />
-    <h3> Add New Employeer</h3>
+    <h3> Add New Employer</h3>
 
     <br />
 
