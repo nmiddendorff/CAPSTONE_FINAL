@@ -9,30 +9,51 @@
 
 
     Search one item at a time:
-<table class="tg">
+
+
+
+    <table class="tg">
   <tr>
-    <th class="tg-031e">   <p class="text-left">Search First Name:</p> 
-   <div class="form-group"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></div></th>
-    
-      <th class="tg-031e">       <p class="text-left">Search Last Name:</p> 
-   <div class="form-group"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></div></th>
-    
-      <th class="tg-031e"><p class="text-left">Search City:</p> 
-   <div class="form-group"><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></div></th>
-    
-      <th class="tg-031e">       <p class="text-left">Search Employer:</p> 
-   <div class="form-group"><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></div></th>
+    <th class="tg-031e"><p class="text-left">Search First Name:  <br/></p></th>
+    <th class="tg-031e"><div class="form-group"><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></div></th>
+    <th class="tg-031e">
+        <asp:Button ID="Button1" runat="server" Text="Search" />
+      </th>
+  </tr>
+
+
+  <tr>
+    <th class="tg-031e"><p class="text-left">Search Last Name:  <br/></p></th>
+    <th class="tg-031e"><div class="form-group"><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></div></th>
+    <th class="tg-031e">
+        <asp:Button ID="Button2" runat="server" Text="Search" />
+      </th>
+  </tr>
+
+  <tr>
+    <th class="tg-031e"><p class="text-left">Search City:  <br/></p></th>
+    <th class="tg-031e"><div class="form-group"><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></div></th>
+    <th class="tg-031e">
+        <asp:Button ID="Button3" runat="server" Text="Search" />
+      </th>
+  </tr>
+
+  <tr>
+    <th class="tg-031e"><p class="text-left">Search Employer:  <br/></p></th>
+    <th class="tg-031e"><div class="form-group"><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></div></th>
+    <th class="tg-031e">
+        <asp:Button ID="Button4" runat="server" Text="Search" />
+      </th>
   </tr>
 </table>
 
 
 
-    <br />
-    <br />
+
 
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_student]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1" Visible="False">
         <Columns>
             <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
             <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
@@ -55,7 +76,7 @@
     </asp:GridView>
     <br />
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_student]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource2">
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource2" Visible="False">
         <Columns>
             <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
             <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
@@ -78,7 +99,7 @@
     </asp:GridView>
     <br />
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_student]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource3">
+    <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource3" Visible="False">
         <Columns>
             <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
             <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
@@ -101,7 +122,7 @@
     </asp:GridView>
     <br />
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_employee]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource4">
+    <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource4" Visible="False">
         <Columns>
             <asp:BoundField DataField="EID" HeaderText="EID" InsertVisible="False" ReadOnly="True" SortExpression="EID" />
             <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
