@@ -6,9 +6,12 @@
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     <br />
-    How many people are in the Student Database?
+    How many students are in the Student Database?&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_studentcount" runat="server"></asp:Label></span>
     <br />
-    <asp:Label ID="lbl_studentcount" runat="server"></asp:Label>
+    <br />
+    How many employers are in the Employer Database?&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_employercount" runat="server"></asp:Label></span>
+  
+
 
 
 
