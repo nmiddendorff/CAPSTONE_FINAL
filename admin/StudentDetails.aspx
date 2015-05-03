@@ -251,5 +251,9 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
     <br />
     <asp:Button ID="btnEmail" runat="server" Text="Email" />
 
+    <br />
+    <br />
+    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+
 </asp:Content>
 

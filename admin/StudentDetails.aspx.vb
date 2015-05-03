@@ -46,4 +46,8 @@ Partial Class admin_StudentDetails
     End Sub
 
     
+    'Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+    'Dim sid As Label = FormView1.FindControl("SIDLabel")
+    'Label1.Text = sid.Text
+    'End Sub
 End Class
