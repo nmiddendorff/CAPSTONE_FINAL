@@ -7,7 +7,7 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID, final_student.comments, final_student.last_contact 
 FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID 
 WHERE ([SID] = @SID)" UpdateCommand="UPDATE [final_student] 
-SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email, [major] = @major, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [EID] = @EID, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location, [GID] = @GID WHERE [SID] = @SID
+SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email,  [major] = @major, [eid] = @eid, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location WHERE [SID] = @SID
 ">
         <SelectParameters>
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" Type="Int32" />
@@ -26,7 +26,6 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:Parameter Name="salary" Type="Int32" />
             <asp:Parameter Name="job_title" Type="String" />
             <asp:Parameter Name="job_location" Type="String" />
-            <asp:Parameter Name="GID" Type="Int32" />
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" />
         </UpdateParameters>
     </asp:SqlDataSource>
@@ -35,11 +34,11 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         <table class="table">
                 <tr>
                     <th class="tg-031e">Employer Name</th>
-                    <th class="tg-031e"><asp:TextBox ID="emp_nameTextBox" runat="server" Text='<%# Bind("emp_name") %>' /></th>
-                </tr>
-                <tr>
-                    <th class="tg-031e">Graduation Date</th>
-                    <th class="tg-031e"><asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("SHORT_DESCR") %>' /></th>
+                    <th class="tg-031e">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID") %>'>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
+                    </th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Last Name</th>
@@ -103,11 +102,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <table class="table">
                 <tr>
                     <th class="tg-031e">Employer Name</th>
-                    <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name") %>' /></th>
-                </tr>
-                <tr>
-                    <th class="tg-031e">Graduation Date</th>
-                    <th class="tg-031e"><asp:Label ID="Label1" runat="server" Text='<%# Bind("SHORT_DESCR") %>' /></th>
+                    <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Last Name</th>
