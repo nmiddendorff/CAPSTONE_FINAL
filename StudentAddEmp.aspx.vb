@@ -9,6 +9,7 @@ Partial Class StudentAddEmp
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         Dim val As String = Request.QueryString("Parameter")
         Dim url As String
         url = "/StudentPage.aspx?SID=" & val
