@@ -1,8 +1,21 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="StudentPage.aspx.vb" Inherits="admin_StudentDetails" %>
 
+<script runat="server">
+
+    Protected Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim val As String = Request.QueryString("SID")
+        Dim url As String
+        url = "/StudentAddEmp.aspx?Parameter=" & val
+        Response.Redirect(url)
+    End Sub
+</script>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+   
+    
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT final_employee.emp_name, [dbo.final_graduation].GID AS Expr1, [dbo.final_graduation].SHORT_DESCR, final_student.SID, final_student.last_name, final_student.first_name, final_student.phone, final_student.email, final_student.major, final_student.address1, final_student.address2, final_student.city, final_student.state, final_student.EID, final_student.salary, final_student.job_title, final_student.job_location, final_student.GID, final_student.comments, final_student.last_contact 
 FROM [dbo.final_graduation] INNER JOIN final_student ON [dbo.final_graduation].GID = final_student.GID INNER JOIN final_employee ON final_student.EID = final_employee.EID 
@@ -31,7 +44,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
     </asp:SqlDataSource>
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
-                        <table class="table">
+              <table class="table">
                 <tr>
                     <th class="tg-031e">Employer Name</th>
                     <th class="tg-031e">
@@ -39,6 +52,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
                     </th>
+                 <th class="tg-031e"><asp:Button ID="Button1" runat="server" Text="Add Employer" OnClick="Button1_Click" /></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Last Name</th>
@@ -104,6 +118,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                     <th class="tg-031e">Employer Name</th>
                     <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
                 </tr>
+
                 <tr>
                     <th class="tg-031e">Last Name</th>
                     <th class="tg-031e"><asp:Label ID="last_nameLabel" runat="server" Text='<%# Bind("last_name") %>' /></th>
@@ -162,7 +177,6 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
         </ItemTemplate>
 
     </asp:FormView>
-
     <br />
     
     
