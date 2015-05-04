@@ -28,5 +28,15 @@ Partial Class admin_Statistics
         empsqlConnection.Close()
         lbl_employercount.Text = employercount.ToString
 
+        Dim salarycount As Integer
+        Dim salarysqlConnection As New SqlConnection(ConfigurationManager.ConnectionStrings("db_studentrecords").ConnectionString)
+        Dim salarysqlCommand As New SqlCommand
+        salarysqlCommand.Connection = salarysqlConnection
+        salarysqlCommand.CommandText = "SELECT AVG(salary) FROM [final_student]"
+
+        salarysqlConnection.Open()
+        salarycount = salarysqlCommand.ExecuteScalar()
+        salarysqlConnection.Close()
+        lbl_salarycount.Text = salarycount.ToString
     End Sub
 End Class
