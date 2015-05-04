@@ -45,176 +45,238 @@
 </asp:SqlDataSource>
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="SID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
-            SID:
-            <asp:Label ID="SIDLabel1" runat="server" Text='<%# Eval("SID") %>' />
-            <br />
-            last_name:
-            <asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' />
-            <br />
-            first_name:
-            <asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' />
-            <br />
-            phone:
-            <asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' />
-            <br />
-            email:
-            <asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' />
-            <br />
-            major:
-            <asp:TextBox ID="majorTextBox" runat="server" Text='<%# Bind("major") %>' />
-            <br />
-            address1:
-            <asp:TextBox ID="address1TextBox" runat="server" Text='<%# Bind("address1") %>' />
-            <br />
-            address2:
-            <asp:TextBox ID="address2TextBox" runat="server" Text='<%# Bind("address2") %>' />
-            <br />
-            city:
-            <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
-            <br />
-            state:
-            <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
-            <br />
-            EID:
-            <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource8" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID")%>'>
+             <table class="table">
+                 <tr>
+            <th class="tg-031e">SID:</th>
+            <th class="tg-031e"><asp:Label ID="SIDLabel1" runat="server" Text='<%# Eval("SID") %>' /></th>
+                 </tr>
+                 <tr>
+            <th class="tg-031e">Last Name:</th>
+            <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">First Name:</th>
+            <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Phone:</th>
+            <th class="tg-031e"><asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Email:</th>
+            <th class="tg-031e"><asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Major:</th>
+            <th class="tg-031e"><asp:TextBox ID="majorTextBox" runat="server" Text='<%# Bind("major") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 1:</th>
+            <th class="tg-031e"><asp:TextBox ID="address1TextBox" runat="server" Text='<%# Bind("address1") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 2:</th>
+            <th class="tg-031e"><asp:TextBox ID="address2TextBox" runat="server" Text='<%# Bind("address2") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">City:</th>
+            <th class="tg-031e"><asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' /></th>
+            <</tr>
+                 <tr>
+            <th class="tg-031e">State:</th>
+            <th class="tg-031e"><asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Employer:</th>
+            <th class="tg-031e"><asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource8" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID")%>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
-            <br />
-            salary:
-            <asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' />
-            <br />
-            job_title:
-            <asp:TextBox ID="job_titleTextBox" runat="server" Text='<%# Bind("job_title") %>' />
-            <br />
-            job_location:
-            <asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' />
-            <br />
-            GID:
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource7" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID") %>'>
+            <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Salary:</th>
+            <th class="tg-031e"><asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Title:</th>
+            <th class="tg-031e"><asp:TextBox ID="job_titleTextBox" runat="server" Text='<%# Bind("job_title") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Location:</th>
+            <th class="tg-031e"><asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Graduated:</th>
+            <th class="tg-031e"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource7" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID") %>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [LONG_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
-            <br />
-            comments:
-            <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
-            <br />
-            last_contact:
-            <asp:TextBox ID="last_contactTextBox" runat="server" Text='<%# Bind("last_contact") %>' />
-            <br />
-            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </EditItemTemplate>
+            <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [LONG_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource></th>
+            <</tr>
+                 <tr>
+            <th class="tg-031e">Comments:</th>
+            <th class="tg-031e"><asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Last Contacted:</th>
+            <th class="tg-031e"><asp:TextBox ID="last_contactTextBox" runat="server" Text='<%# Bind("last_contact") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" /></th>
+            &nbsp;<th class="tg-031e"><asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /></th>
+        </tr>
+                     </table>
+                 </EditItemTemplate>
         <InsertItemTemplate>
-            last_name:
-            <asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' />
-            <br />
-            first_name:
-            <asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' />
-            <br />
-            phone:
-            <asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' />
-            <br />
-            email:
-            <asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' />
-            <br />
-            major:
-            <asp:TextBox ID="majorTextBox" runat="server" Text='<%# Bind("major") %>' />
-            <br />
-            address1:
-            <asp:TextBox ID="address1TextBox" runat="server" Text='<%# Bind("address1") %>' />
-            <br />
-            address2:
-            <asp:TextBox ID="address2TextBox" runat="server" Text='<%# Bind("address2") %>' />
-            <br />
-            city:
-            <asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' />
-            <br />
-            state:
-            <asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' />
-            <br />
-            EID:
-            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource6" DataTextField="emp_name" DataValueField="EID" Height="16px" SelectedValue='<%# Bind("EID")%>'>
+            <table class="table">
+                <tr>
+            <th class="tg-031e">Last Name:</th>
+            <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">First Name:</th>
+            <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Phone:</th>
+            <th class="tg-031e"><asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Email:</th>
+            <th class="tg-031e"><asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Major:</th>
+            <th class="tg-031e"><asp:TextBox ID="majorTextBox" runat="server" Text='<%# Bind("major") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 1:</th>
+            <th class="tg-031e"><asp:TextBox ID="address1TextBox" runat="server" Text='<%# Bind("address1") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 2:</th>
+            <th class="tg-031e"><asp:TextBox ID="address2TextBox" runat="server" Text='<%# Bind("address2") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">City:</th>
+            <th class="tg-031e"><asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">State:</th>
+            <th class="tg-031e"><asp:TextBox ID="stateTextBox" runat="server" Text='<%# Bind("state") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Employer:</th>
+            <th class="tg-031e"><asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource6" DataTextField="emp_name" DataValueField="EID" Height="16px" SelectedValue='<%# Bind("EID")%>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
-            <br />
-            salary:
-            <asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' />
-            <br />
-            job_title:
-            <asp:TextBox ID="job_titleTextBox" runat="server" Text='<%# Bind("job_title") %>' />
-            <br />
-            job_location:
-            <asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' />
-            <br />
-            GID:
-            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource5" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID")%>'>
+            <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Salary:</th>
+            <th class="tg-031e"><asp:TextBox ID="salaryTextBox" runat="server" Text='<%# Bind("salary") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Title:</th>
+            <th class="tg-031e"><asp:TextBox ID="job_titleTextBox" runat="server" Text='<%# Bind("job_title") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Location:</th>
+            <th class="tg-031e"><asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Graduated:</th>
+            <th class="tg-031e"><asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource5" DataTextField="LONG_DESCR" DataValueField="GID" SelectedValue='<%# Bind("GID")%>'>
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [LONG_DESCR], [GID] FROM [dbo.final_graduation]"></asp:SqlDataSource>
-            <br />
-            comments:
-            <asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' />
-            <br />
-            last_contact:
-            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("last_contact")%>'></asp:TextBox>
-            <br />
-            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-        </InsertItemTemplate>
+            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [LONG_DESCR], [GID] FROM [dbo.final_graduation]"></asp:SqlDataSource></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Comments:</th>
+            <th class="tg-031e"><asp:TextBox ID="commentsTextBox" runat="server" Text='<%# Bind("comments") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Last Contacted:</th>
+            <th class="tg-031e"><asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("last_contact")%>'></asp:TextBox></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" /></th>
+            &nbsp;<th class="tg-031e"><asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /></th>
+        </tr>
+                     </table>
+                </InsertItemTemplate>
         <ItemTemplate>
-            SID:
-            <asp:Label ID="SIDLabel" runat="server" Text='<%# Eval("SID") %>' />
-            <br />
-            last_name:
-            <asp:Label ID="last_nameLabel" runat="server" Text='<%# Bind("last_name") %>' />
-            <br />
-            first_name:
-            <asp:Label ID="first_nameLabel" runat="server" Text='<%# Bind("first_name") %>' />
-            <br />
-            phone:
-            <asp:Label ID="phoneLabel" runat="server" Text='<%# Bind("phone") %>' />
-            <br />
-            email:
-            <asp:Label ID="emailLabel" runat="server" Text='<%# Bind("email") %>' />
-            <br />
-            major:
-            <asp:Label ID="majorLabel" runat="server" Text='<%# Bind("major") %>' />
-            <br />
-            address1:
-            <asp:Label ID="address1Label" runat="server" Text='<%# Bind("address1") %>' />
-            <br />
-            address2:
-            <asp:Label ID="address2Label" runat="server" Text='<%# Bind("address2") %>' />
-            <br />
-            city:
-            <asp:Label ID="cityLabel" runat="server" Text='<%# Bind("city") %>' />
-            <br />
-            state:
-            <asp:Label ID="stateLabel" runat="server" Text='<%# Bind("state") %>' />
-            <br />
-            EID:
-            <asp:Label ID="EIDLabel" runat="server" Text='<%# Bind("EID") %>' />
-            <br />
-            salary:
-            <asp:Label ID="salaryLabel" runat="server" Text='<%# Bind("salary") %>' />
-            <br />
-            job_title:
-            <asp:Label ID="job_titleLabel" runat="server" Text='<%# Bind("job_title") %>' />
-            <br />
-            job_location:
-            <asp:Label ID="job_locationLabel" runat="server" Text='<%# Bind("job_location") %>' />
-            <br />
-            GID:
-            <asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' />
-            <br />
-            comments:
-            <asp:Label ID="commentsLabel" runat="server" Text='<%# Bind("comments") %>' />
-            <br />
-            last_contact:
-            <asp:Label ID="last_contactLabel" runat="server" Text='<%# Bind("last_contact") %>' />
-            <br />
-            <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-            &nbsp;<asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-            &nbsp;<asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-        </ItemTemplate>
+            <table class="table">
+                <tr>
+            <th class="tg-031e">SID:</th>
+            <th class="tg-031e"><asp:Label ID="SIDLabel" runat="server" Text='<%# Eval("SID") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Last Name:</th>
+            <th class="tg-031e"><asp:Label ID="last_nameLabel" runat="server" Text='<%# Bind("last_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">First Name:</th>
+            <th class="tg-031e"><asp:Label ID="first_nameLabel" runat="server" Text='<%# Bind("first_name") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Phone:</th>
+            <th class="tg-031e"><asp:Label ID="phoneLabel" runat="server" Text='<%# Bind("phone") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Email:</th>
+            <th class="tg-031e"><asp:Label ID="emailLabel" runat="server" Text='<%# Bind("email") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Major:</th>
+            <th class="tg-031e"><asp:Label ID="majorLabel" runat="server" Text='<%# Bind("major") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 1:</th>
+            <th class="tg-031e"><asp:Label ID="address1Label" runat="server" Text='<%# Bind("address1") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Address 2:</th>
+            <th class="tg-031e"><asp:Label ID="address2Label" runat="server" Text='<%# Bind("address2") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">City:</th>
+            <th class="tg-031e"><asp:Label ID="cityLabel" runat="server" Text='<%# Bind("city") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">State:</th>
+            <th class="tg-031e"><asp:Label ID="stateLabel" runat="server" Text='<%# Bind("state") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Employer:</th>
+            <th class="tg-031e"><asp:Label ID="EIDLabel" runat="server" Text='<%# Bind("EID") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Salary:</th>
+            <th class="tg-031e"><asp:Label ID="salaryLabel" runat="server" Text='<%# Bind("salary") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Title:</th>
+            <th class="tg-031e"><asp:Label ID="job_titleLabel" runat="server" Text='<%# Bind("job_title") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Job Location:</th>
+            <th class="tg-031e"><asp:Label ID="job_locationLabel" runat="server" Text='<%# Bind("job_location") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Graduated:</th>
+            <th class="tg-031e"><asp:Label ID="GIDLabel" runat="server" Text='<%# Bind("GID") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Comments:</th>
+            <th class="tg-031e"><asp:Label ID="commentsLabel" runat="server" Text='<%# Bind("comments") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e">Last Contacted:</th>
+            <th class="tg-031e"><asp:Label ID="last_contactLabel" runat="server" Text='<%# Bind("last_contact") %>' /></th>
+            </tr>
+                 <tr>
+            <th class="tg-031e"><asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" /></th>
+            &nbsp;<th class="tg-031e"><asp:LinkButton ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" /></th>
+            &nbsp;<th class="tg-031e"><asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" /></th>
+        </tr>
+                     </table>
+                </ItemTemplate>
 </asp:FormView>
 
     <asp:Label ID="lbl_newstudent" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
