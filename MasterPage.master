@@ -33,6 +33,7 @@
         <div id="container">
             
               <!-- Fixed navbar -->
+    
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -48,6 +49,7 @@
           
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+              <li><asp:Image ID="Image1" runat="server" ImageUrl="~/images/48031.png" BorderWidth="6" /></li>
          <li><asp:HyperLink ID="home" runat="server" NavigateUrl="~/admin/homepage.aspx">Home</asp:HyperLink></li>
          <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/admin/ViewAllStudent.aspx">View All Students</asp:HyperLink></li>  
          <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/ViewAllEmployee.aspx">View All Employers</asp:HyperLink></li>  
