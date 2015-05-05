@@ -373,23 +373,6 @@
     <br />
     <br />
     <br />
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_employee]"></asp:SqlDataSource>
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EID" DataSourceID="SqlDataSource2">
-        <Columns>
-            <asp:BoundField DataField="EID" HeaderText="EID" InsertVisible="False" ReadOnly="True" SortExpression="EID" />
-            <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
-            <asp:BoundField DataField="emp_hq" HeaderText="emp_hq" SortExpression="emp_hq" />
-            <asp:BoundField DataField="emp_phone" HeaderText="emp_phone" SortExpression="emp_phone" />
-        </Columns>
-    </asp:GridView>
-    <br />
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [SHORT_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
-    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource3">
-        <Columns>
-            <asp:BoundField DataField="GID" HeaderText="GID" ReadOnly="True" SortExpression="GID" />
-            <asp:BoundField DataField="SHORT_DESCR" HeaderText="SHORT_DESCR" SortExpression="SHORT_DESCR" />
-        </Columns>
-    </asp:GridView>
-</asp:Content>
+    </asp:Content>
 
