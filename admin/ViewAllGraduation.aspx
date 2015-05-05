@@ -21,7 +21,11 @@
             <asp:Parameter Name="GID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1" AllowSorting="True">
+    <br />
+    <br />
+    <h1>Graduation Codes</h1>
+    <br />
+    <asp:GridView ID="GridView_graduation" runat="server" AutoGenerateColumns="False" DataKeyNames="GID" DataSourceID="SqlDataSource1" AllowSorting="True" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="849px">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="GID" HeaderText="Graduation ID" ReadOnly="True" SortExpression="GID" />
@@ -29,6 +33,14 @@
             <asp:BoundField DataField="LONG_DESCR" HeaderText="Long Description" SortExpression="LONG_DESCR" />
             <asp:BoundField DataField="ACADEMIC_YEAR_RANGE" HeaderText="Academic Year Range" SortExpression="ACADEMIC_YEAR_RANGE" />
         </Columns>
+        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+        <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
 
     <asp:Label ID="lbl_deletedGraduation" runat="server" Font-Bold="True" Font-Size="Medium" ForeColor="Red"></asp:Label>

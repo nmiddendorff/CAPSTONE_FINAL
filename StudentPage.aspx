@@ -42,7 +42,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
+    <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" Width="356px">
         <EditItemTemplate>
               <table class="table">
                 <tr>
@@ -61,10 +61,12 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                 <tr>
                     <th class="tg-031e">First Name</th>
                     <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
+
                 </tr>
                 <tr>
                     <th class="tg-031e">Phone Number</th>
                     <th class="tg-031e"><asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' /></th>
+
                 </tr>
                 <tr>
                     <th class="tg-031e">Email</th>
@@ -117,6 +119,8 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                 <tr>
                     <th class="tg-031e">Employer Name</th>
                     <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
+                    <th class="tg-031e">*</th>
+
                 </tr>
 
                 <tr>
