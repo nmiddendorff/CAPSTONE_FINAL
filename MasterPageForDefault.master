@@ -49,8 +49,8 @@
           
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-         
-         <li>
+         <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Statistics.aspx">Statistics</asp:HyperLink></li>
+      
              
 </div>
 
