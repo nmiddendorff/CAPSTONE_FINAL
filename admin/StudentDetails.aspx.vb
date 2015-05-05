@@ -24,7 +24,7 @@ Partial Class admin_StudentDetails
 
         rngTo = email.Text
         rngSubject = "Mike Colbert needs your help!"
-        rngBody = "Hi " & txtname & ", Please click this link http://localhost:61949/StudentPage.aspx?SID=" & txtsid
+        rngBody = "Hi " & txtname & ", Please click this link http://localhost:61949/StudentPage.aspx?Comp=NULL&SID=" & txtsid
         'rngAttach = .Range("B4")
 
 
