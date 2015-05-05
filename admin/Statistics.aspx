@@ -6,13 +6,9 @@
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     <br />
-    There are&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_studentcount" runat="server"></asp:Label></span>&nbsp;&nbsp;students in the Student Database.
-    <br />
-    <br />
-    There are&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_employercount" runat="server"></asp:Label></span>&nbsp;&nbsp;employers in the Employer Database.
-    <br />
-    <br />
-    The average salary is:&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_salarycount" runat="server" Text="Label"></asp:Label></span>
+    # of total students:&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_studentcount" runat="server"></asp:Label></span>&nbsp;<br />
+    # of total employers:&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_employercount" runat="server"></asp:Label></span>&nbsp;&nbsp;<br />
+    average student salary:&nbsp;&nbsp;<span class="badge badge-success">$<asp:Label ID="lbl_salarycount" runat="server" Text="Label"></asp:Label></span>
 
 
 
