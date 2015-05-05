@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="StudentPage.aspx.vb" Inherits="admin_StudentDetails" %>
 
 <script runat="server">
-
     Protected Sub Button1_Click(sender As Object, e As EventArgs)
         Dim val As String = Request.QueryString("SID")
         Dim url As String
@@ -42,7 +41,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" />
         </UpdateParameters>
     </asp:SqlDataSource>
-    <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1" Width="356px">
+    <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
               <table class="table">
                 <tr>
@@ -61,12 +60,10 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                 <tr>
                     <th class="tg-031e">First Name</th>
                     <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
-
                 </tr>
                 <tr>
                     <th class="tg-031e">Phone Number</th>
                     <th class="tg-031e"><asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' /></th>
-
                 </tr>
                 <tr>
                     <th class="tg-031e">Email</th>
@@ -119,8 +116,6 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                 <tr>
                     <th class="tg-031e">Employer Name</th>
                     <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
-                    <th class="tg-031e">*</th>
-
                 </tr>
 
                 <tr>
@@ -185,4 +180,3 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
     
     
 </asp:Content>
-
