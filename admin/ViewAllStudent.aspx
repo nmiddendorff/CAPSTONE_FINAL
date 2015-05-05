@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" DeleteCommand="DELETE FROM [final_student] WHERE [SID] = @SID" InsertCommand="INSERT INTO [final_student] ([last_name], [first_name], [phone], [email], [major], [address1], [address2], [city], [state], [EID], [salary], [job_title], [job_location], [GID]) VALUES (@last_name, @first_name, @phone, @email, @major, @address1, @address2, @city, @state, @EID, @salary, @job_title, @job_location, @GID)" SelectCommand="SELECT final_student.SID, final_student.first_name, final_student.last_name, final_employee.emp_name, [dbo.final_graduation].LONG_DESCR FROM final_student INNER JOIN final_employee ON final_student.EID = final_employee.EID INNER JOIN [dbo.final_graduation] ON final_student.GID = [dbo.final_graduation].GID" UpdateCommand="UPDATE [final_student] SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email, [major] = @major, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [EID] = @EID, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location, [GID] = @GID WHERE [SID] = @SID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" DeleteCommand="DELETE FROM [final_student] WHERE [SID] = @SID" InsertCommand="INSERT INTO [final_student] ([last_name], [first_name], [phone], [email], [major], [address1], [address2], [city], [state], [EID], [salary], [job_title], [job_location], [GID]) VALUES (@last_name, @first_name, @phone, @email, @major, @address1, @address2, @city, @state, @EID, @salary, @job_title, @job_location, @GID)" SelectCommand="SELECT final_student.SID, final_student.first_name, final_student.last_name, final_employee.emp_name, [dbo.final_graduation].SHORT_DESCR FROM final_student INNER JOIN final_employee ON final_student.EID = final_employee.EID INNER JOIN [dbo.final_graduation] ON final_student.GID = [dbo.final_graduation].GID" UpdateCommand="UPDATE [final_student] SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [email] = @email, [major] = @major, [address1] = @address1, [address2] = @address2, [city] = @city, [state] = @state, [EID] = @EID, [salary] = @salary, [job_title] = @job_title, [job_location] = @job_location, [GID] = @GID WHERE [SID] = @SID">
         <DeleteParameters>
             <asp:Parameter Name="SID" Type="Int32" />
         </DeleteParameters>
@@ -52,7 +52,7 @@
             <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
             <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name" />
             <asp:BoundField DataField="emp_name" HeaderText="Employer" SortExpression="emp_name" />
-            <asp:BoundField DataField="LONG_DESCR" HeaderText="Graduation" SortExpression="LONG_DESCR" />
+            <asp:BoundField DataField="SHORT_DESCR" HeaderText="Graduation" SortExpression="SHORT_DESCR" />
             <asp:HyperLinkField DataNavigateUrlFields="SID" DataNavigateUrlFormatString="StudentDetails.aspx?SID={0}" Text="SELECT" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
