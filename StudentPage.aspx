@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="StudentPage.aspx.vb" Inherits="admin_StudentDetails" %>
 
 <script runat="server">
+
     Protected Sub Button1_Click(sender As Object, e As EventArgs)
         Dim val As String = Request.QueryString("SID")
         Dim url As String
@@ -180,3 +181,4 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
     
     
 </asp:Content>
+
