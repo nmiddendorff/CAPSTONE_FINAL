@@ -44,10 +44,8 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <br />
-    <h1>All Students</h1>
-    <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1" AllowSorting="True" Width="970px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+    This SQL DataSouce has final_student INNER JOINED with final_employee<br />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1" AllowSorting="True" Width="765px">
         <Columns>
             <asp:BoundField DataField="SID" HeaderText="Student ID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
             <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
@@ -56,14 +54,6 @@
             <asp:BoundField DataField="LONG_DESCR" HeaderText="Graduation" SortExpression="LONG_DESCR" />
             <asp:HyperLinkField DataNavigateUrlFields="SID" DataNavigateUrlFormatString="StudentDetails.aspx?SID={0}" Text="SELECT" />
         </Columns>
-        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-        <SortedAscendingCellStyle BackColor="#F7F7F7" />
-        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-        <SortedDescendingCellStyle BackColor="#E5E5E5" />
-        <SortedDescendingHeaderStyle BackColor="#242121" />
     </asp:GridView>
 <br />
     <asp:Label ID="lbl_deletedStudent" runat="server" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
