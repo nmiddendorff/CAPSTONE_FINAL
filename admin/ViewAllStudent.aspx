@@ -49,11 +49,11 @@
     <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="SID" DataSourceID="SqlDataSource1" AllowSorting="True" Width="970px" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
         <Columns>
-            <asp:BoundField DataField="SID" HeaderText="Student ID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
-            <asp:BoundField DataField="first_name" HeaderText="First Name" SortExpression="first_name" />
-            <asp:BoundField DataField="last_name" HeaderText="Last Name" SortExpression="last_name" />
-            <asp:BoundField DataField="emp_name" HeaderText="Employer" SortExpression="emp_name" />
-            <asp:BoundField DataField="LONG_DESCR" HeaderText="Graduation" SortExpression="LONG_DESCR" />
+            <asp:BoundField DataField="SID" HeaderText="SID" InsertVisible="False" ReadOnly="True" SortExpression="SID" />
+            <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
+            <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
+            <asp:BoundField DataField="emp_name" HeaderText="emp_name" SortExpression="emp_name" />
+            <asp:BoundField DataField="LONG_DESCR" HeaderText="LONG_DESCR" SortExpression="LONG_DESCR" />
             <asp:HyperLinkField DataNavigateUrlFields="SID" DataNavigateUrlFormatString="StudentDetails.aspx?SID={0}" Text="SELECT" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
