@@ -5,7 +5,7 @@
     Protected Sub Button1_Click(sender As Object, e As EventArgs)
         Dim val As String = Request.QueryString("SID")
         Dim url As String
-        url = "/StudentAddEmp.aspx?Parameter=" & val
+        url = "/StudentAddEmp.aspx?Comp=NULL&Parameter=" & val
         Response.Redirect(url)
     End Sub
 </script>
