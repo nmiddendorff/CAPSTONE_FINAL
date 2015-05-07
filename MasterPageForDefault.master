@@ -51,6 +51,7 @@
           <ul class="nav navbar-nav">
          <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/StudentStatistics.aspx">Statistics</asp:HyperLink></li>
          <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Login Home</asp:HyperLink></li>
+         <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/admin/homepage.aspx">Admin</asp:HyperLink></li>
 
       
              
