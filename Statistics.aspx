@@ -5,25 +5,33 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     
-    # of total employers:&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_employercount" runat="server"></asp:Label></span>&nbsp;&nbsp;<br />
+<%--    # of total employers:&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_employercount" runat="server"></asp:Label></span>&nbsp;&nbsp;<br />--%>
 <%--    average student salary:&nbsp;&nbsp;<span class="badge badge-success">$<asp:Label ID="lbl_salarycount" runat="server" Text="Label"></asp:Label></span>--%>
     
 
-    <h3>Please select the graduation classes you would like to compare:          </h3> 
+    <h3>Please select the graduation classes you would like to compare:</h3>     
+    <asp:Button ID="Button1" runat="server" Text="Filter" Width="20%" />
 
-    <table class="table">
-                    <tr>
-    <th class="tg-031e"><h4>
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="SHORT_DESCR" DataValueField="GID">
+
+    <br />
+
+
+    <br />
+
+
+    <table class="table" border="1" style="border-style: none; text-align: center; vertical-align: middle">
+                    <tr style="background-color: #C0C0C0">
+    <th class="tg-031e" style="height: 90px; text-align: center;"><h4>
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="SHORT_DESCR" DataValueField="GID" Width="70%">
         </asp:DropDownList>
         &nbsp;
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [SHORT_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
         </h4></th>
-<th class="tg-031e"><h4>
-        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="SHORT_DESCR" DataValueField="GID">
+ <th class="tg-031e" style="height: 90px"></th>
+<th class="tg-031e" style="height: 90px; text-align: center;"><h4>
+        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="SHORT_DESCR" DataValueField="GID" Width="70%">
         </asp:DropDownList> 
     &nbsp; 
-    <asp:Button ID="Button1" runat="server" Text="Filter" Width="69px" />
         &nbsp;
         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [GID], [SHORT_DESCR] FROM [dbo.final_graduation]"></asp:SqlDataSource>
         </h4></th>
@@ -31,10 +39,12 @@
     
                         </tr>
         <tr>
-    <th class="tg-031e"><asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Visible="False">
+    <th class="tg-031e"><asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Visible="False" CellPadding="1" CellSpacing="10" HorizontalAlign="Center" Width="80%">
         <Columns>
             <asp:BoundField DataField="Income Range" HeaderText="Income Range" SortExpression="Income Range" />
-            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" />
+            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" >
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [SID], [last_name], [first_name], [email], [GID] FROM [final_student] WHERE ([GID] = @GID)">
@@ -52,10 +62,14 @@ ORDER BY Total DESC">
         </SelectParameters>
     </asp:SqlDataSource>
     </th>
-            <th class="tg-031e"><asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource10" Visible="False">
+            <th class="tg-031e" style="text-align: center; vertical-align: middle;" dir="rtl">
+                Salary<br />Count </th>
+            <th class="tg-031e"><asp:GridView ID="GridView2" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource10" Visible="False" CellPadding="1" CellSpacing="10" HorizontalAlign="Center" Width="80%">
         <Columns>
             <asp:BoundField DataField="Income Range" HeaderText="Income Range" SortExpression="Income Range" />
-            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" />
+            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" >
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
         </Columns>
     </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT i.income_range as [Income Range], COUNT(*) AS Total
@@ -76,19 +90,24 @@ ORDER BY Total DESC">
 
             </tr>
         <tr>
-            <th class="tg-031e">
-                # of students:&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_studentcount1" runat="server"></asp:Label></span>&nbsp;<br />
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                &nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="lbl_studentcount1" runat="server" Height="100%" Width="40%"  Font-Bold="True"></asp:Label></h1><%--</span>--%>&nbsp;<br />
             </th>
-            <th class="tg-031e">
-                # of students:&nbsp;&nbsp;<span class="badge badge-success"><asp:Label ID="lbl_studentcount2" runat="server"></asp:Label></span>&nbsp;<br />
+            <th class="tg-031e" style="vertical-align: middle; text-align: center">Number<br />
+                of<br />
+                Students</th>
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                &nbsp;&nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="lbl_studentcount2" runat="server" Height="100%" Width="40%" Font-Bold="True"></asp:Label><%--</span>--%></h1>&nbsp;<br />
             </th>
         </tr>
         <tr>
             <th class="tg-031e">
-                <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" Visible="False">
+                <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource4" Visible="False" CellSpacing="10" HorizontalAlign="Center" Width="80%">
         <Columns>
             <asp:BoundField DataField="Major" HeaderText="Major" SortExpression="Major" />
-            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" />
+            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" >
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
         </Columns>
     </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="   SELECT major as [Major], Count(*) as Total
@@ -101,11 +120,15 @@ ORDER BY Total DESC">
                     </SelectParameters>
                 </asp:SqlDataSource>
             </th>
+            <th class="tg-031e" style="vertical-align: middle; text-align: center">Major<br />
+                Count</th>
             <th class="tg-031e">
-                <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource7" Visible="False">
+                <asp:GridView ID="GridView4" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource7" Visible="False" CellSpacing="10" HorizontalAlign="Center" Width="80%">
         <Columns>
             <asp:BoundField DataField="Major" HeaderText="Major" SortExpression="Major" />
-            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" />
+            <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" ReadOnly="True" >
+            <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
         </Columns>
     </asp:GridView>
                 <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="   SELECT major as [Major], Count(*) as Total
@@ -120,29 +143,46 @@ ORDER BY Total DESC">
             </th>
         </tr>
         <tr>
-            <th class="tg-031e">
-                31
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                                &nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="Label1" runat="server" Height="100%" Width="40%"  Font-Bold="True"></asp:Label></h1><%--</span>--%>&nbsp;<br />
+
             </th>
-            <th class="tg-031e">
-                32
+            <th class="tg-031e" style="vertical-align: middle; text-align: center">%
+                of
+                <br />
+                Alumni
+                <br />
+                in<br />
+                Iowa</th>
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                                &nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="Label2" runat="server" Height="100%" Width="40%"  Font-Bold="True"></asp:Label></h1><%--</span>--%>&nbsp;<br />
+
             </th>
         </tr>
         <tr>
-            <th class="tg-031e">
-                41
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                                                &nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="Label3" runat="server" Height="100%" Width="40%"  Font-Bold="True"></asp:Label></h1><%--</span>--%>&nbsp;<br />
             </th>
-            <th class="tg-031e">
-                42
+           <th class="tg-031e" style="vertical-align: middle; text-align: center">%
+                of
+                <br />
+                Alumni
+                <br />
+                in<br />
+                Illinois</th>
+            <th class="tg-031e" style="text-align: center; vertical-align: middle; font-weight: bold;">
+                                                &nbsp;<h1><%--<span class="badge badge-success">--%><asp:Label ID="Label4" runat="server" Height="100%" Width="40%"  Font-Bold="True"></asp:Label></h1><%--</span>--%>&nbsp;<br />
             </th>
         </tr>
-        <tr>
+        <%--<tr>
             <th class="tg-031e">
                 51
             </th>
+            <th class="tg-031e">11111</th>
             <th class="tg-031e">
                 52
             </th>
-        </tr>
+        </tr>--%>
         </table>
 
 
