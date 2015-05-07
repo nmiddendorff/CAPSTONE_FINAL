@@ -43,6 +43,8 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
             <asp:QueryStringParameter Name="SID" QueryStringField="SID" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    <br />
+    <h4>Please edit/update your info below:</h4>
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
               <table class="table">
