@@ -45,6 +45,8 @@
             <asp:Parameter Name="SID" Type="Int32" />
         </UpdateParameters>
 </asp:SqlDataSource>
+    <br />
+    In order to send an email to a student please fill out: Last Name, First Name and Email<br />
     <asp:FormView ID="FormView1" runat="server" DataKeyNames="SID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
         <EditItemTemplate>
              <table class="table">
