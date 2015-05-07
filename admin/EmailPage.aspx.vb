@@ -26,33 +26,34 @@ Partial Class admin_EmailPage
                 Dim rngBody As String
                 Dim rngAttach As String
 
-                objOutlook = CreateObject("Outlook.Application")
-                objMail = objOutlook.CreateItem(0)
+                If email.Contains("@") Then
+                    objOutlook = CreateObject("Outlook.Application")
+                    objMail = objOutlook.CreateItem(0)
 
 
-                rngTo = email
-                rngSubject = "Mike Colbert needs your help!"
-                rngBody = "Hi " & first_name & ", Please click this link https://instruct.biz.uiowa.edu/courses/MSCI4250/StudentRecords/StudentPage.aspx?Comp=NULL&SID=" & sid
-                'rngAttach = .Range("B4")
+                    rngTo = email
+                    rngSubject = "Mike Colbert needs your help!"
+                    rngBody = "Hi " & first_name & ", Please click this link http://localhost:61949/StudentPage.aspx?Comp=NULL&SID=" & sid
+                    'rngAttach = .Range("B4")
 
 
 
-                With objMail
-                    .To = rngTo
-                    .Subject = rngSubject
-                    .Body = rngBody
-                    '.Attachments.Add rngAttach.Value
-                    .Send() '.Display() 'Instead of .Display, you can use .Send to send the email _
+                    With objMail
+                        .To = rngTo
+                        .Subject = rngSubject
+                        .Body = rngBody
+                        '.Attachments.Add rngAttach.Value
+                        .Display() '.Display() 'Instead of .Display, you can use .Send to send the email _
 
-                End With
+                    End With
 
-                objOutlook = Nothing
-                objMail = Nothing
-                rngTo = Nothing
-                rngSubject = Nothing
-                rngBody = Nothing
-                rngAttach = Nothing
-
+                    objOutlook = Nothing
+                    objMail = Nothing
+                    rngTo = Nothing
+                    rngSubject = Nothing
+                    rngBody = Nothing
+                    rngAttach = Nothing
+                End If
             Next
 
         End If
