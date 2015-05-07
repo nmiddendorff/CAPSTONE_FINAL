@@ -6,7 +6,7 @@ Partial Class admin_AddNewEmployee
         Dim newEmployee As String = e.Values("emp_name").ToString()
 
         lbl_newEmployee.Text = newEmployee & " has been added to the Employer database."
-        Response.AddHeader("REFRESH", "3;URL=./ViewAllEmployee.aspx")
+        Response.AddHeader("REFRESH", "1;URL=./AddNewEmployee.aspx")
 
     End Sub
 

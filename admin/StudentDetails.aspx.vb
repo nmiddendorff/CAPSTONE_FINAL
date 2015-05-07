@@ -1,4 +1,5 @@
-﻿
+﻿Imports System.Data
+Imports System.Data.SqlClient
 Partial Class admin_StudentDetails
     Inherits System.Web.UI.Page
 
@@ -45,9 +46,45 @@ Partial Class admin_StudentDetails
         rngAttach = Nothing
     End Sub
 
-    
+
     'Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-    'Dim sid As Label = FormView1.FindControl("SIDLabel")
-    'Label1.Text = sid.Text
+    '    'Dim cal As Object = Me.FormView1.FindControl("Calendar1")
+
+    '    If IsPostBack Then
+    '        'FormView1.Visible = False
+    '        Me.FormView1.FindControl("Calendar1").Visible = False
+    '    End If
     'End Sub
+
+    Protected Sub Calendar1_DataBinding(sender As Object, e As EventArgs)
+        Dim cal As Calendar = FormView1.FindControl("Calendar1")
+        Dim con As TextBox = FormView1.FindControl("last_contactTB")
+
+        con.Text = cal.SelectedDate
+    End Sub
+
+    Protected Sub Calendar1_SelectionChanged(sender As Object, e As EventArgs)
+        Dim cal As Calendar = FormView1.FindControl("Calendar1")
+        Dim con As TextBox = FormView1.FindControl("last_contactTB")
+
+        con.Text = cal.SelectedDate
+        cal.Visible = False
+    End Sub
+
+    Protected Sub ImageButton1_Click(sender As Object, e As ImageClickEventArgs)
+        Dim cal As Calendar = FormView1.FindControl("Calendar1")
+        cal.Visible = True
+    End Sub
+
+    Protected Sub Page_PreLoad(sender As Object, e As EventArgs) Handles Me.PreLoad
+        'Making sure the students don't get lost if their graduation or employer is accidentally deleted
+        Dim connection As SqlConnection = New SqlConnection("Data Source=apollo.biz.uiowa.edu; Initial Catalog=studentrecords; Persist Security Info=True; User ID=studentrecordadmin; Password=IowaHawkeyes1!")
+        Dim sql As String = "UPDATE final_student SET last_contact = GETDATE() WHERE last_contact is NULL"
+        Dim command As SqlCommand = New SqlCommand(sql, connection)
+        command.Connection.Open()
+        command.ExecuteNonQuery()
+        command.Connection.Close()
+    End Sub
+
+
 End Class

@@ -12,6 +12,6 @@ Partial Class AddNew
 
         lbl_newstudent.Text = newstudent & " has been added to the Student database."
 
-        Response.AddHeader("REFRESH", "3;URL=./ViewAllStudent.aspx")
+        Response.AddHeader("REFRESH", "1;URL=./AddNewStudent.aspx")
     End Sub
 End Class

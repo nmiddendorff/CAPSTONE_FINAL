@@ -176,10 +176,16 @@
                 <tr>
             <th class="tg-031e">Last Name:</th>
             <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' /></th>
+                    <th class="tg-031e">
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="last_nameTextBox" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </th>
             </tr>
                  <tr>
             <th class="tg-031e">First Name:</th>
             <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
+                     <th class="tg-031e">
+                       <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="first_nameTextBox" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                     </th>
             </tr>
                  <tr>
             <th class="tg-031e">Phone:</th>
@@ -262,13 +268,19 @@
             </tr>
                  <tr>
             <th class="tg-031e"><asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" /></th>
-        </tr>
-                     <caption>
-                         &nbsp;<tr>
-                             <th class="tg-031e">
-                                 <asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-                             </th>
-                         </tr>
+         <th class="tg-031e"><asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /></th>
+                 </tr>
+                     
+                         <tr>
+                    <th class="tg-031e">*-Required field
+                        
+                        <br />
+                        
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="first_nameTextBox" ErrorMessage="First Name is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="last_nameTextBox" ErrorMessage="Last Name is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                      </th>
+                </tr>
                 </caption>
                      </table>
                 </InsertItemTemplate>

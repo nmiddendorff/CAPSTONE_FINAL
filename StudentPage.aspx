@@ -48,28 +48,37 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
               <table class="table">
                 <tr>
                     <th class="tg-031e">Employer Name</th>
-                    <th class="tg-031e">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID") %>'>
+                    <th class="tg-031e"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID") %>'>
                         </asp:DropDownList>
+                        
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
                     </th>
                  <th class="tg-031e"><asp:Button ID="Button1" runat="server" Text="Add Employer" OnClick="Button1_Click" /></th>
                 </tr>
                 <tr>
-                    <th class="tg-031e">Last Name:</th>
-                    <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' /></th>
+                    <th class="tg-031e">Last Name*:</th>
+                    <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' />
+                    </th>
+                    <th class="tg-031e">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="last_nameTextBox" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </th>
                 </tr>
                 <tr>
-                    <th class="tg-031e">First Name:</th>
+                    <th class="tg-031e">First Name*:</th>
                     <th class="tg-031e"><asp:TextBox ID="first_nameTextBox" runat="server" Text='<%# Bind("first_name") %>' /></th>
+                    <th class="tg-031e">
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="first_nameTextBox" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Phone Number:</th>
                     <th class="tg-031e"><asp:TextBox ID="phoneTextBox" runat="server" Text='<%# Bind("phone") %>' /></th>
+                    <th class="tg-031e">(Ex. 999-999-9999)</th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Email:</th>
                     <th class="tg-031e"><asp:TextBox ID="emailTextBox" runat="server" Text='<%# Bind("email") %>' /></th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Major:</th>
@@ -78,6 +87,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_major]"></asp:SqlDataSource>
                     </th>
+                    <th class="tg-031e"></th>
                 </tr>
                   <tr>
                     <th class="tg-031e">Major 2:</th>
@@ -86,18 +96,22 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_major]"></asp:SqlDataSource>
                       </th>
+                      <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Address 1:</th>
                     <th class="tg-031e"><asp:TextBox ID="address1TextBox" runat="server" Text='<%# Bind("address1") %>' /></th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Address 2:</th>
                     <th class="tg-031e"><asp:TextBox ID="address2TextBox" runat="server" Text='<%# Bind("address2") %>' /></th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">City:</th>
                     <th class="tg-031e"><asp:TextBox ID="cityTextBox" runat="server" Text='<%# Bind("city") %>' /></th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">State:</th>
@@ -106,6 +120,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_states]"></asp:SqlDataSource>
                     </th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Salary:</th>
@@ -114,18 +129,32 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT * FROM [final_income]"></asp:SqlDataSource>
                     </th>
+                    <th class="tg-031e"></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Job Title:</th>
                     <th class="tg-031e"><asp:TextBox ID="job_titleTextBox" runat="server" Text='<%# Bind("job_title") %>' /></th>
+                    <th class="tg-031e">(Ex. 'Web Developer')</th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Job Location:</th>
                     <th class="tg-031e"><asp:TextBox ID="job_locationTextBox" runat="server" Text='<%# Bind("job_location") %>' /></th>
+                    <th class="tg-031e">(Where your office is located)</th>
                 </tr>
                 <tr>
                     <th class="tg-031e"><asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" /></th>
                     <th class="tg-031e"><asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" /></th>
+                    <th class="tg-031e"></th>
+                </tr>
+                  <tr>
+                    <th class="tg-031e">*-Required field
+                        
+                        <br />
+                        
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="first_nameTextBox" ErrorMessage="First Name is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="last_nameTextBox" ErrorMessage="Last Name is Required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                      </th>
                 </tr>
 
             

@@ -6,10 +6,10 @@ Partial Class admin_AddNewGraduation
     End Sub
 
     Protected Sub FormView2_ItemInserted(sender As Object, e As FormViewInsertedEventArgs) Handles FormView2.ItemInserted
-        Dim newgraduation As String = e.Values("LONG_DESCR").ToString()
+        Dim newgraduation As String = e.Values("SHORT_DESCR").ToString()
 
         lbl_newgraduation.Text = newgraduation & " has been added to the Graduation database."
 
-        Response.AddHeader("REFRESH", "3;URL=./ViewAllGraduation.aspx")
+        Response.AddHeader("REFRESH", "1;URL=./AddNewGraduation.aspx")
     End Sub
 End Class
