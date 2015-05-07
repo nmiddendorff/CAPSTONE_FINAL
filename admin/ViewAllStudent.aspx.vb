@@ -14,7 +14,7 @@ Partial Class AddNew
     Protected Sub Page_PreLoad(sender As Object, e As EventArgs) Handles Me.PreLoad
         'Making sure the students don't get lost if their graduation or employer is accidentally deleted
         Dim connection As SqlConnection = New SqlConnection("Data Source=apollo.biz.uiowa.edu; Initial Catalog=studentrecords; Persist Security Info=True; User ID=studentrecordadmin; Password=IowaHawkeyes1!")
-        Dim sql As String = "UPDATE final_student SET eid = 46 WHERE eid is NULL"
+        Dim sql As String = "UPDATE final_student SET eid = 26 WHERE eid is NULL"
         Dim sql2 As String = "UPDATE final_student SET gid = 99999 WHERE gid is NULL"
         Dim command As SqlCommand = New SqlCommand(sql, connection)
         Dim command2 As SqlCommand = New SqlCommand(sql2, connection)

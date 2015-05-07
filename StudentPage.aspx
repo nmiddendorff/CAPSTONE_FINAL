@@ -48,15 +48,7 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
     <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource1">
         <EditItemTemplate>
               <table class="table">
-                <tr>
-                    <th class="tg-031e">Employer Name</th>
-                    <th class="tg-031e"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID") %>'>
-                        </asp:DropDownList>
-                        
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
-                    </th>
-                 <th class="tg-031e"><asp:Button ID="Button1" runat="server" Text="Add Employer" OnClick="Button1_Click" /></th>
-                </tr>
+                 
                 <tr>
                     <th class="tg-031e">Last Name*:</th>
                     <th class="tg-031e"><asp:TextBox ID="last_nameTextBox" runat="server" Text='<%# Bind("last_name") %>' />
@@ -124,6 +116,20 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                     </th>
                     <th class="tg-031e"></th>
                 </tr>
+                  <tr>
+                      <th class="tg-031e"></th>
+                      <th class="tg-031e"></th>
+                      <th class="tg-031e"></th>
+                  </tr>
+                  <tr>
+                    <th class="tg-031e">Employer Name</th>
+                    <th class="tg-031e"><asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="emp_name" DataValueField="EID" SelectedValue='<%# Bind("EID") %>'>
+                        </asp:DropDownList>
+                        
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_studentrecords %>" SelectCommand="SELECT [EID], [emp_name] FROM [final_employee]"></asp:SqlDataSource>
+                    </th>
+                 <th class="tg-031e"><asp:Button ID="Button1" runat="server" Text="Add Employer" OnClick="Button1_Click" /></th>
+                </tr>
                 <tr>
                     <th class="tg-031e">Salary:</th>
                     <th class="tg-031e">
@@ -166,11 +172,8 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
         
         <ItemTemplate>
             <table class="table">
-                <tr>
-                    <th class="tg-031e">Employer Name:</th>
-                    <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
-                </tr>
-
+                
+             
                 <tr>
                     <th class="tg-031e">Last Name:</th>
                     <th class="tg-031e"><asp:Label ID="last_nameLabel" runat="server" Text='<%# Bind("last_name") %>' /></th>
@@ -212,8 +215,18 @@ SET [last_name] = @last_name, [first_name] = @first_name, [phone] = @phone, [ema
                     <th class="tg-031e"><asp:Label ID="stateLabel" runat="server" Text='<%# Bind("state") %>' /></th>
                 </tr>
                 <tr>
+                      <th class="tg-031e"></th>
+                      <th class="tg-031e"></th>
+                      <th class="tg-031e"></th>
+                  </tr>
+                <%--<tr>
                     <th class="tg-031e">Salary:</th>
                     <th class="tg-031e"><asp:Label ID="salaryLabel" runat="server" Text='<%# Bind("salary") %>' /></th>
+                </tr>--%>
+
+                <tr>
+                    <th class="tg-031e">Employer Name:</th>
+                    <th class="tg-031e"><asp:Label ID="emp_nameLabel" runat="server" Text='<%# Bind("emp_name")%>' /></th>
                 </tr>
                 <tr>
                     <th class="tg-031e">Job Title:</th>
