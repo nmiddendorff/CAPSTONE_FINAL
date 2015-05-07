@@ -9,7 +9,7 @@ Partial Class admin_EmailPage
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         If MsgBox("Are you sure you would like to send all emails?", MsgBoxStyle.YesNo, "Warning") = vbYes Then
-
+            MsgBox("Email(s) Sent!", MsgBoxStyle.Exclamation, "Congrats!")
 
             For Each item As GridViewRow In GridView1.Rows
                 Dim email As String
@@ -32,7 +32,7 @@ Partial Class admin_EmailPage
 
                 rngTo = email
                 rngSubject = "Mike Colbert needs your help!"
-                rngBody = "Hi " & first_name & ", Please click this link http://localhost:61949/StudentPage.aspx?Comp=NULL&SID=" & sid
+                rngBody = "Hi " & first_name & ", Please click this link https://instruct.biz.uiowa.edu/courses/MSCI4250/StudentRecords/StudentPage.aspx?Comp=NULL&SID=" & sid
                 'rngAttach = .Range("B4")
 
 
@@ -55,8 +55,8 @@ Partial Class admin_EmailPage
 
             Next
 
-
         End If
+
 
     End Sub
 
