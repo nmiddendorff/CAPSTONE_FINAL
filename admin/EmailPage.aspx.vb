@@ -33,7 +33,7 @@ Partial Class admin_EmailPage
 
                     rngTo = email
                     rngSubject = "Mike Colbert needs your help!"
-                    rngBody = "Hi " & first_name & ", Please click this link http://localhost:61949/StudentPage.aspx?Comp=NULL&SID=" & sid
+                    rngBody = "Hi " & first_name & ", Please click this link http://localhost:57420/StudentPage.aspx?Comp=NULL&SID=" & sid
                     'rngAttach = .Range("B4")
 
 
