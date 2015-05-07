@@ -4,6 +4,7 @@ Partial Class admin_StudentDetails
     Inherits System.Web.UI.Page
 
     Protected Sub btnEmail_Click(sender As Object, e As EventArgs) Handles btnEmail.Click
+
         Dim objOutlook As Object
         Dim objMail As Object
         Dim rngTo As String
