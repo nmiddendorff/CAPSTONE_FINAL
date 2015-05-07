@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="StudentPage.aspx.vb" Inherits="admin_StudentDetails" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPageforDefault.master" AutoEventWireup="false" CodeFile="StudentPage.aspx.vb" Inherits="admin_StudentDetails" %>
 
 <script runat="server">
 
